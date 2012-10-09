@@ -4,14 +4,15 @@
     Author     : Andrey Svininykh <svininykh@gmail.com>
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="stripes" uri="http://stripes.sourceforge.net/stripes.tld"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+    <title>NORD POS mobile - Loading...</title>
+</head>
+<body>
+    <jsp:forward page="/stripes/action/Application.action" />
+</body>
 </html>
