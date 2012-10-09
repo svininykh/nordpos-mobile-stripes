@@ -8,6 +8,7 @@ package com.nordpos.mobile.stripes.action;
  *
  * @author svininykh-av
  */
+import com.nordpos.mobile.stripes.dao.ApplicationDAO;
 import java.util.ArrayList;
 import java.util.List;
 import net.sourceforge.stripes.action.ActionBean;
@@ -37,6 +38,7 @@ public class ApplicationActionBean implements ActionBean {
     public Resolution load() {
         log.info("loading");
         results.clear();
+        results = ApplicationDAO.getInstance().findApplicationVersions();
         if (results == null) {
             results = new ArrayList();
             results.add("ERROR LOADING APPLICATION.");
