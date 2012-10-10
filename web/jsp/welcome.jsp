@@ -11,14 +11,37 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
-    <stripes:form action="/stripes/action/Application.action">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>NORD POS mobile - Welcome - <c:out value="${actionBean.results.id}" /> - <c:out value="${actionBean.results.version}" /></title>
+
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js">
+        </script>
+        </script>
     </head>
 
     <body>
-        <h1>Welcome to <c:out value="${actionBean.results.name}" />!</h1>
+        <div data-role="page" id="first">
+            <div data-theme="b" data-role="header">
+                <a data-role="button" data-transition="fade" href="login.jsp" data-icon="arrow-r" data-iconpos="right" class="ui-btn-right">
+                    Login
+                </a>
+                <h2>
+                    NORD POS mobile
+                </h2>
+            </div>
+            <div data-role="content" style="padding: 15px" align="center">
+                <h1>Welcome to <c:out value="${actionBean.results.name}" />!</h1>
+            </div>
+            <div data-theme="b" data-role="footer">
+                <h2>
+                    2012
+                </h2>
+            </div>
+        </div>
     </body>
-    </stripes:form>
 </html>
