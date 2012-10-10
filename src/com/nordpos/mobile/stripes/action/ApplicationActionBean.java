@@ -1,16 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.nordpos.mobile.stripes.action;
 
 /**
  *
- * @author svininykh-av
+ * @author Andrey Svininykh <svininykh@gmail.com>
  */
-import com.nordpos.mobile.stripes.dao.ApplicationDAO;
-import java.util.ArrayList;
-import java.util.List;
+import com.nordpos.mobile.stripes.dao.ApplicationPersist;
+import com.nordpos.mobile.stripes.model.Application;
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
 import net.sourceforge.stripes.action.DefaultHandler;
@@ -23,7 +18,7 @@ import org.apache.log4j.Logger;
 public class ApplicationActionBean implements ActionBean {
 
     private static final Logger log = Logger.getLogger(ApplicationActionBean.class);
-    private List results = new ArrayList();
+    private Application application = new Application();
     private ActionBeanContext context;
 
     public ActionBeanContext getContext() {
@@ -37,21 +32,16 @@ public class ApplicationActionBean implements ActionBean {
     @DefaultHandler
     public Resolution load() {
         log.info("loading");
-        results.clear();
-        results = ApplicationDAO.getInstance().findApplicationVersions();
-        if (results == null) {
-            results = new ArrayList();
-            results.add("ERROR LOADING APPLICATION.");
-        }
+        application = ApplicationPersist.getInstance().readApplication();
 
-        return new ForwardResolution("/login.jsp");
+        return new ForwardResolution("/jsp/welcome.jsp");
     }
 
-    public List getResults() {
-        return results;
+    public Application getResults() {
+        return application;
     }
 
-    public void setResults(List results) {
-        this.results = results;
+    public void setResults(Application applicaion) {
+        this.application = applicaion;
     }
 }

@@ -1,7 +1,7 @@
 <%--
     Document   : index
     Created on : 09.10.2012, 12:06:35
-    Author     : Andrey Svininykh <svininykh@gmail.com>
+    Author     : Andrey Svininykh
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

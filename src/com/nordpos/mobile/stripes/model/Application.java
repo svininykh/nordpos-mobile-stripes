@@ -1,21 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.nordpos.mobile.stripes.model;
-
-import java.util.List;
 
 /**
  *
- * @author svininykh-av
+ * @author Andrey Svininykh <svininykh@gmail.com>
  */
 public class Application {
 
     private String id;
     private String name;
     private String version;
-    private List<Application> application;
 
     public String getId() {
         return id;
@@ -39,13 +32,5 @@ public class Application {
 
     public void setVersion(String version) {
         this.version = version;
-    }
-
-    public List getApplication() {
-        return application;
-    }
-
-    public void setGlossary(List<Application> application) {
-        this.application = application;
     }
 }
