@@ -13,6 +13,6 @@
     <title>NORD POS mobile - Loading...</title>
 </head>
 <body>
-    <jsp:forward page="/stripes/action/Application.action" />
+    <jsp:forward page="/stripes/action/Welcome.action" />
 </body>
 </html>

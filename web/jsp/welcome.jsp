@@ -14,7 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>NORD POS mobile - Welcome - <c:out value="${actionBean.DBApplication.id}" /> - <c:out value="${actionBean.DBApplication.version}" /></title>
+        <title>NORD POS mobile - Welcome - <c:out value="${actionBean.application.id}" /> - <c:out value="${actionBean.application.version}" /></title>
 
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -32,7 +32,7 @@
                 </h2>
             </div>
             <div data-role="content" style="padding: 15px" align="center">
-                <h1>Welcome to <c:out value="${actionBean.DBApplication.name}" />!</h1>
+                <h1>Welcome to <c:out value="${actionBean.application.name}" />!</h1>
             </div>
             <div data-theme="b" data-role="footer">
                 <h2>

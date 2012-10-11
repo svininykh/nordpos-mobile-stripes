@@ -15,9 +15,9 @@ import net.sourceforge.stripes.action.UrlBinding;
 import org.apache.log4j.Logger;
 
 @UrlBinding("/stripes/action")
-public class ApplicationActionBean implements ActionBean {
+public class WelcomeActionBean implements ActionBean {
 
-    private static final Logger log = Logger.getLogger(ApplicationActionBean.class);
+    private static final Logger log = Logger.getLogger(WelcomeActionBean.class);
     private Application application = new Application();
     private ActionBeanContext context;
 
@@ -37,11 +37,11 @@ public class ApplicationActionBean implements ActionBean {
         return new ForwardResolution("/jsp/welcome.jsp");
     }
 
-    public Application getDBApplication() {
+    public Application getApplication() {
         return application;
     }
 
-    public void setDBApplication(Application applicaion) {
-        this.application = applicaion;
+    public void setApplication(Application application) {
+        this.application = application;
     }
 }
