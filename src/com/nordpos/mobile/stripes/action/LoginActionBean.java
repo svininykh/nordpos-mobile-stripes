@@ -20,8 +20,8 @@ public class LoginActionBean implements ActionBean {
     private static final Logger log = Logger.getLogger(LoginActionBean.class);
     private People loginUser = new People();
     private ActionBeanContext context;
-    private String loginName;
-    private String loginPassword;
+    private String loginName = "";
+    private String loginPassword = "";
 
     public ActionBeanContext getContext() {
         return context;
@@ -36,7 +36,7 @@ public class LoginActionBean implements ActionBean {
         log.info("Loading database object for login.jsp.");
         loginUser = PeoplePersist.getInstance().findUser(loginName, loginPassword);
 
-        return new ForwardResolution("/jsp/login.jsp");
+        return new ForwardResolution("/jsp/menu.jsp");
     }
 
     public People getLoginUser() {

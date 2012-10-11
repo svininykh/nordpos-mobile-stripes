@@ -1,6 +1,6 @@
 <%--
-    Document   : login
-    Created on : 09.10.2012, 18:51:17
+    Document   : menu
+    Created on : Oct 11, 2012, 4:07:17 PM
     Author     : Andrey Svininykh
 --%>
 
@@ -29,23 +29,7 @@
                 </h2>
             </div>
             <div data-role="content" style="padding: 15px" align="center">
-                <stripes:form beanclass="com.nordpos.mobile.stripes.action.LoginActionBean" focus="">
-                    <table>
-                        <tr>
-                            <td>Name:</td>
-                            <td><stripes:text name="loginName"/></td>
-                        </tr>
-                        <tr>
-                            <td>Password:</td>
-                            <td><stripes:password name="loginPassword"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <stripes:submit name="login" value="Login"/>
-                            </td>
-                        </tr>
-                    </table>
-                </stripes:form>
+                <h1>Hello <c:out value="${actionBean.loginUser.name}" />!</h1>
             </div>
             <div data-theme="b" data-role="footer">
                 <h2>

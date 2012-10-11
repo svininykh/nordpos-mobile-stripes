@@ -24,7 +24,7 @@
     <body>
         <div data-role="page" id="first">
             <div data-theme="b" data-role="header">
-                <a data-role="button" data-transition="fade" href="login.jsp" data-icon="arrow-r" data-iconpos="right" class="ui-btn-right">
+               <a data-role="button" data-transition="fade" href="<c:url value='/jsp/login.jsp'/>" data-icon="arrow-r" data-iconpos="right" class="ui-btn-right">
                     Login
                 </a>
                 <h2>
@@ -34,6 +34,7 @@
             <div data-role="content" style="padding: 15px" align="center">
                 <h1>Welcome to <c:out value="${actionBean.application.name}" />!</h1>
             </div>
+
             <div data-theme="b" data-role="footer">
                 <h2>
                     2012
