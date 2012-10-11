@@ -30,11 +30,11 @@ public class People {
         this.name = name;
     }
 
-    public String getPassword() {
+    public String getAppPassword() {
         return apppasword;
     }
 
-    public void setPassword(String apppasword) {
+    public void setAppPassword(String apppasword) {
         this.apppasword = apppasword;
     }
 
@@ -47,7 +47,7 @@ public class People {
     }
 
     public String getRole() {
-        return card;
+        return role;
     }
 
     public void setRole(String role) {
@@ -66,7 +66,7 @@ public class People {
         return image;
     }
 
-    public void setVisible(Byte[] image) {
+    public void setImage(Byte[] image) {
         this.image = image;
     }
 }

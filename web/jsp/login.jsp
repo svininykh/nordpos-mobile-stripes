@@ -16,6 +16,24 @@
         <title>NORD POS mobile - Login</title>
     </head>
     <body>
-        <h1>Hello User!</h1>
+        <h1>Hello ${actionBean.loginUser.role} ${actionBean.loginUser.name}!</h1>
+
+        <stripes:form beanclass="com.nordpos.mobile.stripes.action.LoginActionBean" focus="">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><stripes:text name="loginName"/></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><stripes:password name="loginPassword"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <stripes:submit name="login" value="Login"/>
+                    </td>
+                </tr>
+            </table>
+        </stripes:form>
     </body>
 </html>
