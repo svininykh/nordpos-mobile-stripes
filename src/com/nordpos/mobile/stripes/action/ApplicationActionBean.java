@@ -37,11 +37,11 @@ public class ApplicationActionBean implements ActionBean {
         return new ForwardResolution("/jsp/welcome.jsp");
     }
 
-    public Application getResults() {
+    public Application getDBApplication() {
         return application;
     }
 
-    public void setResults(Application applicaion) {
+    public void setDBApplication(Application applicaion) {
         this.application = applicaion;
     }
 }
