@@ -25,14 +25,14 @@
         <div data-role="page" id="first">
             <div data-theme="b" data-role="header">
                <a data-role="button" data-transition="fade" href="<c:url value='/jsp/login.jsp'/>" data-icon="arrow-r" data-iconpos="right" class="ui-btn-right">
-                    Login
+                    <stripes:label name="button.login"/>
                 </a>
                 <h2>
                     NORD POS mobile
                 </h2>
             </div>
             <div data-role="content" style="padding: 15px" align="center">
-                <h1>Welcome to <c:out value="${actionBean.application.name}" />!</h1>
+                <h1><stripes:label name="message.welcome" /> <c:out value="${actionBean.application.name}" />!</h1>
             </div>
 
             <div data-theme="b" data-role="footer">

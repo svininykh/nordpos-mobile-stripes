@@ -41,7 +41,7 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <stripes:submit name="login" value="Login"/>
+                                <stripes:submit name="login"/>
                             </td>
                         </tr>
                     </table>
