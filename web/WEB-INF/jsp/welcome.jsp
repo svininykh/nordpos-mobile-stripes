@@ -16,9 +16,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>NORD POS mobile - Welcome - <c:out value="${actionBean.application.id}" /> - <c:out value="${actionBean.application.version}" /></title>
 
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <link rel="stylesheet" href="<c:url value='/css/jquery.mobile-1.1.1.min.css'/>" />
+        <script src="<c:url value='/js/jquery.min.js'/>"></script>
+        <script src="<c:url value='/js/jquery.mobile-1.2.0.min.js'/>"></script>
     </head>
 
     <body>
