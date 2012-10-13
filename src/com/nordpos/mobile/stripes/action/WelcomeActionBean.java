@@ -34,7 +34,7 @@ public class WelcomeActionBean implements ActionBean {
         log.info("loading");
         application = ApplicationPersist.getInstance().readApplication();
 
-        return new ForwardResolution("/jsp/welcome.jsp");
+        return new ForwardResolution("/WEB-INF/jsp/welcome.jsp");
     }
 
     public Application getApplication() {

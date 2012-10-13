@@ -36,7 +36,7 @@ public class LoginActionBean implements ActionBean {
         log.info("Loading database object for login.jsp.");
         loginUser = PeoplePersist.getInstance().findUser(loginName, loginPassword);
 
-        return new ForwardResolution("/jsp/menu.jsp");
+        return new ForwardResolution("/WEB-INF/jsp/menu.jsp");
     }
 
     public People getLoginUser() {
