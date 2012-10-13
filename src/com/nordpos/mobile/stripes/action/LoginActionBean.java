@@ -39,6 +39,10 @@ public class LoginActionBean implements ActionBean {
         return new ForwardResolution("/WEB-INF/jsp/menu.jsp");
     }
 
+    public Resolution view() {
+        return new ForwardResolution("/WEB-INF/jsp/login.jsp");
+    }
+
     public People getLoginUser() {
         return loginUser;
     }

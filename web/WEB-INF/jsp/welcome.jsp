@@ -10,10 +10,13 @@
                        pageid="welcome">
 
     <stripes:layout-component name="header">
-        <a data-role="button" data-transition="fade" href="<c:url value='/WEB-INF/jsp/login.jsp'/>" data-icon="arrow-r" data-iconpos="right" class="ui-btn-right">
+        <stripes:link beanclass="com.nordpos.mobile.stripes.action.LoginActionBean"
+                      event="view"
+                      class="ui-btn-right">
             <stripes:label name="button.login"/>
-        </a>
+        </stripes:link>
     </stripes:layout-component>
+
     <stripes:layout-component name="content">
         <h1><stripes:label name="message.welcome" /> <c:out value="${actionBean.application.name}" />!</h1>
     </stripes:layout-component>
