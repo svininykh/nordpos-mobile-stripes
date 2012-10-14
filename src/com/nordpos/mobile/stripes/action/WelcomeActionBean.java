@@ -6,8 +6,6 @@ package com.nordpos.mobile.stripes.action;
  */
 import com.nordpos.mobile.stripes.dao.ApplicationPersist;
 import com.nordpos.mobile.stripes.model.Application;
-import net.sourceforge.stripes.action.ActionBean;
-import net.sourceforge.stripes.action.ActionBeanContext;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
@@ -15,26 +13,17 @@ import net.sourceforge.stripes.action.UrlBinding;
 import org.apache.log4j.Logger;
 
 @UrlBinding("/stripes/action")
-public class WelcomeActionBean implements ActionBean {
+public class WelcomeActionBean extends BaseActionBean {
 
     private static final Logger log = Logger.getLogger(WelcomeActionBean.class);
+    private static String VIEW = "/WEB-INF/jsp/welcome.jsp";
     private Application application = new Application();
-    private ActionBeanContext context;
-
-    public ActionBeanContext getContext() {
-        return context;
-    }
-
-    public void setContext(ActionBeanContext actionBeanContext) {
-        this.context = actionBeanContext;
-    }
 
     @DefaultHandler
     public Resolution load() {
-        log.info("loading");
+        log.info("Loading database object for welcome.jsp.");
         application = ApplicationPersist.getInstance().readApplication();
-
-        return new ForwardResolution("/WEB-INF/jsp/welcome.jsp");
+        return new ForwardResolution(VIEW);
     }
 
     public Application getApplication() {

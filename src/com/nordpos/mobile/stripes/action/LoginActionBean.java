@@ -6,41 +6,30 @@ package com.nordpos.mobile.stripes.action;
  */
 import com.nordpos.mobile.stripes.dao.PeoplePersist;
 import com.nordpos.mobile.stripes.model.People;
-import net.sourceforge.stripes.action.ActionBean;
-import net.sourceforge.stripes.action.ActionBeanContext;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
-import net.sourceforge.stripes.action.UrlBinding;
 import org.apache.log4j.Logger;
 
 //@UrlBinding("/stripes/action")
-public class LoginActionBean implements ActionBean {
+public class LoginActionBean extends BaseActionBean {
 
     private static final Logger log = Logger.getLogger(LoginActionBean.class);
+    private static final String LOGIN = "/WEB-INF/jsp/menu.jsp";
+    private static final String VIEW = "/WEB-INF/jsp/login.jsp";
     private People loginUser = new People();
-    private ActionBeanContext context;
     private String loginName = "";
     private String loginPassword = "";
-
-    public ActionBeanContext getContext() {
-        return context;
-    }
-
-    public void setContext(ActionBeanContext actionBeanContext) {
-        this.context = actionBeanContext;
-    }
 
     @DefaultHandler
     public Resolution login() {
         log.info("Loading database object for login.jsp.");
         loginUser = PeoplePersist.getInstance().findUser(loginName, loginPassword);
-
-        return new ForwardResolution("/WEB-INF/jsp/menu.jsp");
+        return new ForwardResolution(LOGIN);
     }
 
     public Resolution view() {
-        return new ForwardResolution("/WEB-INF/jsp/login.jsp");
+        return new ForwardResolution(VIEW);
     }
 
     public People getLoginUser() {

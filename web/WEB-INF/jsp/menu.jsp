@@ -10,11 +10,6 @@
                        pageid="login">
 
     <stripes:layout-component name="header">
-        <stripes:link beanclass="com.nordpos.mobile.stripes.action.WelcomeActionBean"
-                      event="load"
-                      class="ui-btn-left">
-            Log out
-        </stripes:link>
     </stripes:layout-component>
 
     <stripes:layout-component name="content">

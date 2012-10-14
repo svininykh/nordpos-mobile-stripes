@@ -18,7 +18,11 @@
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
-        <h1><stripes:label name="message.welcome" /> <c:out value="${actionBean.application.name}" />!</h1>
+        <h1>
+            <stripes:label name="message.welcome" />
+            <c:out value="${actionBean.application.name}" />
+            <c:out value="${actionBean.application.version}" />!
+        </h1>
     </stripes:layout-component>
 
     <stripes:layout-component name="footer">
