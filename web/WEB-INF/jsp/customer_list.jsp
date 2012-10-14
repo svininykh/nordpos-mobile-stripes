@@ -1,7 +1,7 @@
 <%--
-    Document   : menu
-    Created on : Oct 11, 2012, 4:07:17 PM
-    Author     : Andrey Svininykh
+    Document   : customer_list
+    Created on : 14.10.2012, 20:47:14
+    Author     : svininykh-av
 --%>
 
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
@@ -10,15 +10,14 @@
                        pageid="login">
 
     <stripes:layout-component name="header">
-        <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
-                      event="list"
-                      class="ui-btn-right">
-            Customers
-        </stripes:link>
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
-        <h1>Hello <c:out value="${actionBean.loginUser.name}" />!</h1>
+        <ul data-role="listview">
+            <c:forEach items="${actionBean.Customers}" var="customer" >
+                <li><c:out value="${customer.name}" /></li>
+            </c:forEach>
+        </ul>
     </stripes:layout-component>
 
     <stripes:layout-component name="footer">
