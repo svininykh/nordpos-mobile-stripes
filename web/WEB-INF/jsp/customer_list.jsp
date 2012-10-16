@@ -13,11 +13,14 @@
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
+        <h2>Customers</h2>
         <ul data-role="listview">
             <c:forEach items="${actionBean.customers}" var="customer" >
                 <li><c:out value="${customer.name}" />
                     <ul data-role="listview">
                         <li><c:out value="${customer.id}" /></li>
+                        <li><c:out value="${customer.searchKey}" /></li>
+                        <li><c:out value="${customer.taxId}" /></li>
                     </ul>
                 </li>
             </c:forEach>
