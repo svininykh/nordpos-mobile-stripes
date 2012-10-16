@@ -34,13 +34,13 @@ public class CustomerListActionBean extends BaseActionBean {
 //        return new RedirectResolution(getClass());
 //    }
 
-    public void setCustomerId(String id) {
-        customerId = id;
-    }
-
-    public Customer getCustomer() {
-        return customerDao.findCustomer(customerId);
-    }
+//    public void setCustomerId(String id) {
+//        customerId = id;
+//    }
+//
+//    public Customer getCustomers() {
+//        return customerDao.findCustomer(customerId);
+//    }
 
     public List<Customer> getCustomers() {
         return customerDao.findCustomers();
