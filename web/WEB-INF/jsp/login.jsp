@@ -16,11 +16,11 @@
         <stripes:form beanclass="com.nordpos.mobile.stripes.action.LoginActionBean" focus="">
             <table>
                 <tr>
-                    <td>Name:</td>
+                    <td><stripes:label name="label.login.name" /></td>
                     <td><stripes:text name="loginName"/></td>
                 </tr>
                 <tr>
-                    <td>Password:</td>
+                    <td><stripes:label name="label.login.password" /></td>
                     <td><stripes:password name="loginPassword"/></td>
                 </tr>
                 <tr>

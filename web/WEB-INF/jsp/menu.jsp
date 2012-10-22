@@ -13,13 +13,18 @@
         <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
                       event="list"
                       class="ui-btn-right">
-            Customers
+            <stripes:label name="button.customers" />
         </stripes:link>
     </stripes:layout-component>
 
-    <stripes:layout-component name="content">
-        <h1>Hello <c:out value="${actionBean.loginUser.name}" />!</h1>
-    </stripes:layout-component>
+    <c:if test="${actionBean.loginUser != null}">
+        <stripes:layout-component name="content">
+            <h1>
+                <stripes:label name="message.hello" />
+                <c:out value="${actionBean.loginUser.name}" />!
+            </h1>
+        </stripes:layout-component>
+    </c:if>
 
     <stripes:layout-component name="footer">
 
