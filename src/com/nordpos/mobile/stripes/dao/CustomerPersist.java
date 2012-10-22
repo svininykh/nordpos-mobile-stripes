@@ -4,6 +4,7 @@ import com.nordpos.mobile.stripes.model.Customer;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletContext;
 import net.sf.persist.Persist;
 
 /**
@@ -14,9 +15,9 @@ public class CustomerPersist extends BaseJDBCPersist {
 
     private Persist persist;
 
-    public CustomerPersist() {
+    public CustomerPersist(ServletContext servletContext) {
         try {
-            persist = new Persist(getConnection());
+            persist = new Persist(getConnection(servletContext));
         } catch (Exception ex) {
             Logger.getLogger(ApplicationPersist.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -8,6 +8,7 @@ import com.nordpos.mobile.stripes.util.PropertyUtils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.servlet.ServletContext;
 
 /**
  *
@@ -15,16 +16,10 @@ import java.sql.SQLException;
  */
 public abstract class BaseJDBCPersist {
 
-    private PropertyUtils properties;
-
-    public BaseJDBCPersist() {
-        properties = new PropertyUtils();
-    }
-
-    protected Connection getConnection() throws Exception {
+    protected Connection getConnection(ServletContext servletContext) throws Exception {
         try {
-            Class.forName(properties.getDriverName());
-            return DriverManager.getConnection(properties.getUrl(), properties.getDBUser(), properties.getDBPassword());
+            Class.forName(servletContext.getInitParameter("db.driver"));
+            return DriverManager.getConnection(servletContext.getInitParameter("db.URL"), servletContext.getInitParameter("db.user"), servletContext.getInitParameter("db.password"));
         } catch (SQLException sqlex) {
         } catch (Exception ex) {
         }

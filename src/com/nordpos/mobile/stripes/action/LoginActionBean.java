@@ -18,13 +18,14 @@ public class LoginActionBean extends BaseActionBean {
     private static final String LOGIN = "/WEB-INF/jsp/menu.jsp";
     private static final String VIEW = "/WEB-INF/jsp/login.jsp";
     private People loginUser = new People();
-    private PeoplePersist peopleDao = new PeoplePersist();
+    private PeoplePersist peopleDao;
     private String loginName = "";
     private String loginPassword = "";
 
     @DefaultHandler
     public Resolution login() {
         log.info("Loading database object for login.jsp.");
+        peopleDao = new PeoplePersist(getServletContext());
         loginUser = peopleDao.findUser(loginName, loginPassword);
         return new ForwardResolution(LOGIN);
     }

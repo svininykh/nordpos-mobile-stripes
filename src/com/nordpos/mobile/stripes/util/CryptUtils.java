@@ -1,4 +1,3 @@
-
 package com.nordpos.mobile.stripes.util;
 
 import java.io.UnsupportedEncodingException;
@@ -16,10 +15,12 @@ import javax.crypto.NoSuchPaddingException;
  *
  * @author jaroslawwozniak
  */
+@Deprecated
 public class CryptUtils {
 
     private Cipher cipherDecrypt;
 
+    @Deprecated
     public CryptUtils(String passPhrase) {
 
         try {
@@ -38,6 +39,7 @@ public class CryptUtils {
         }
     }
 
+    @Deprecated
     public String decrypt(String str) {
         try {
             return new String(cipherDecrypt.doFinal(PasswordUtils.hex2byte(str)), "UTF8");

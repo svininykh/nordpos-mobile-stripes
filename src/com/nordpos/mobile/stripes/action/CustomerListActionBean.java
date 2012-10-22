@@ -17,7 +17,7 @@ public class CustomerListActionBean extends BaseActionBean {
 
     private static final String LIST = "/WEB-INF/jsp/customer_list.jsp";
     private static final String VIEW = "/WEB-INF/jsp/customer_view.jsp";
-    private CustomerPersist customerDao = new CustomerPersist();
+    private CustomerPersist customerDao;
     private String customerId;
 
     @DefaultHandler
@@ -43,6 +43,7 @@ public class CustomerListActionBean extends BaseActionBean {
 //    }
 
     public List<Customer> getCustomers() {
+        customerDao =  new CustomerPersist(getServletContext());
         return customerDao.findCustomers();
     }
 }

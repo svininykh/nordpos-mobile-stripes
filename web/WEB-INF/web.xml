@@ -9,6 +9,24 @@
         <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
         <param-value>StripesResources</param-value>
     </context-param>
+
+    <context-param>
+        <param-name>db.driver</param-name>
+        <param-value>com.mysql.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>db.URL</param-name>
+        <param-value>jdbc:mysql://localhost:3306/nordpos-db</param-value>
+    </context-param>
+        <context-param>
+        <param-name>db.user</param-name>
+        <param-value>root</param-value>
+    </context-param>
+        <context-param>
+        <param-name>db.password</param-name>
+        <param-value>root</param-value>
+    </context-param>
+
     <filter>
         <filter-name>StripesFilter</filter-name>
         <filter-class>net.sourceforge.stripes.controller.StripesFilter</filter-class>

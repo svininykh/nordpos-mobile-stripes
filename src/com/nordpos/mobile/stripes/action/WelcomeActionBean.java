@@ -6,6 +6,7 @@ package com.nordpos.mobile.stripes.action;
  */
 import com.nordpos.mobile.stripes.dao.ApplicationPersist;
 import com.nordpos.mobile.stripes.model.Application;
+import javax.servlet.ServletContext;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
@@ -18,11 +19,13 @@ public class WelcomeActionBean extends BaseActionBean {
     private static final Logger log = Logger.getLogger(WelcomeActionBean.class);
     private static String VIEW = "/WEB-INF/jsp/welcome.jsp";
     private Application application = new Application();
-    private ApplicationPersist applicationDao = new ApplicationPersist();
+//    private ServletContext servletContext = getServletContext();
+    private ApplicationPersist applicationDao;
 
     @DefaultHandler
     public Resolution load() {
         log.info("Loading database object for welcome.jsp.");
+        applicationDao  = new ApplicationPersist(getServletContext());
         application = applicationDao.readApplication();
         return new ForwardResolution(VIEW);
     }
