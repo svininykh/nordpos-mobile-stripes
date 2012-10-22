@@ -10,19 +10,31 @@
                        pageid="welcome">
 
     <stripes:layout-component name="header">
-        <stripes:link beanclass="com.nordpos.mobile.stripes.action.LoginActionBean"
-                      event="view"
-                      class="ui-btn-right">
-            <stripes:label name="button.login"/>
-        </stripes:link>
+            <h2>
+                <stripes:label name="message.welcome" />
+                <c:out value="${actionBean.application.name}" />
+                <c:out value="${actionBean.application.version}" />!
+            </h2>
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
-        <h1>
-            <stripes:label name="message.welcome" />
-            <c:out value="${actionBean.application.name}" />
-            <c:out value="${actionBean.application.version}" />!
-        </h1>
+        <stripes:form beanclass="com.nordpos.mobile.stripes.action.LoginActionBean" focus="">
+            <table>
+                <tr>
+                    <td><stripes:label name="label.login.name" /></td>
+                    <td><stripes:text name="loginName"/></td>
+                </tr>
+                <tr>
+                    <td><stripes:label name="label.login.password" /></td>
+                    <td><stripes:password name="loginPassword"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <stripes:submit name="login"/>
+                    </td>
+                </tr>
+            </table>
+        </stripes:form>
     </stripes:layout-component>
 
     <stripes:layout-component name="footer">

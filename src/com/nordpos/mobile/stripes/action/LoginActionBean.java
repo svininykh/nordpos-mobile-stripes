@@ -15,8 +15,7 @@ import org.apache.log4j.Logger;
 public class LoginActionBean extends BaseActionBean {
 
     private static final Logger log = Logger.getLogger(LoginActionBean.class);
-    private static final String LOGIN = "/WEB-INF/jsp/menu.jsp";
-    private static final String VIEW = "/WEB-INF/jsp/login.jsp";
+    private static final String LOGIN = "/WEB-INF/jsp/administration.jsp";
     private People loginUser = new People();
     private PeoplePersist peopleDao;
     private String loginName = "";
@@ -24,22 +23,13 @@ public class LoginActionBean extends BaseActionBean {
 
     @DefaultHandler
     public Resolution login() {
-        log.info("Loading database object for login.jsp.");
         peopleDao = new PeoplePersist(getServletContext());
         loginUser = peopleDao.findUser(loginName, loginPassword);
         return new ForwardResolution(LOGIN);
     }
 
-    public Resolution view() {
-        return new ForwardResolution(VIEW);
-    }
-
     public People getLoginUser() {
         return loginUser;
-    }
-
-    public void setLoginUser(People loginUser) {
-        this.loginUser = loginUser;
     }
 
     public String getLoginName() {

@@ -13,9 +13,9 @@ import net.sourceforge.stripes.action.UrlBinding;
 import org.apache.log4j.Logger;
 
 @UrlBinding("/stripes/action")
-public class WelcomeActionBean extends BaseActionBean {
+public class ApplicationActionBean extends BaseActionBean {
 
-    private static final Logger log = Logger.getLogger(WelcomeActionBean.class);
+    private static final Logger log = Logger.getLogger(ApplicationActionBean.class);
     private static String VIEW = "/WEB-INF/jsp/welcome.jsp";
     private Application application = new Application();
     private ApplicationPersist applicationDao;
@@ -23,16 +23,12 @@ public class WelcomeActionBean extends BaseActionBean {
     @DefaultHandler
     public Resolution load() {
         log.info("Loading database object for welcome.jsp.");
-        applicationDao  = new ApplicationPersist(getServletContext());
+        applicationDao = new ApplicationPersist(getServletContext());
         application = applicationDao.readApplication();
         return new ForwardResolution(VIEW);
     }
 
     public Application getApplication() {
         return application;
-    }
-
-    public void setApplication(Application application) {
-        this.application = application;
     }
 }

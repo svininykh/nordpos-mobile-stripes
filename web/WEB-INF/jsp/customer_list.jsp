@@ -6,14 +6,16 @@
 
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 <stripes:layout-render name="/WEB-INF/jsp/common/layout_main.jsp"
-                       title="Login"
-                       pageid="login">
+                       title="Customers"
+                       pageid="customers">
 
     <stripes:layout-component name="header">
+        <h2>
+            <stripes:label name="button.customers" />
+        </h2>
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
-        <h2>Customers</h2>
         <ul data-role="listview">
             <c:forEach items="${actionBean.customers}" var="customer" >
                 <li><c:out value="${customer.name}" />

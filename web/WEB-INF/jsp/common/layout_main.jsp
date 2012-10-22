@@ -8,7 +8,7 @@
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>${title}</title>
+            <title>${title} - NORD POS mobile</title>
             <link rel="stylesheet" href="<c:url value='/css/jquery.mobile-1.1.1.min.css'/>" />
             <script src="<c:url value='/js/jquery.min.js'/>"></script>
             <script src="<c:url value='/js/jquery.mobile-1.2.0.min.js'/>"></script>
@@ -16,9 +16,6 @@
         <body>
             <div data-role="page" id="${pageid}">
                 <div data-theme="b" data-role="header">
-                    <h2>
-                        NORD POS mobile
-                    </h2>
                     <stripes:layout-component name="header"/>
                 </div>
                 <div data-role="content" style="padding: 15px" align="center">
