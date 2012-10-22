@@ -1,36 +1,34 @@
 package com.nordpos.mobile.stripes.dao;
 
-import com.nordpos.mobile.stripes.model.Application;
 import com.nordpos.mobile.stripes.model.People;
-import com.nordpos.mobile.stripes.util.ConnectionInstance;
-import com.nordpos.mobile.stripes.util.PasswordDecryptor;
+import com.nordpos.mobile.stripes.util.PasswordUtils;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.sf.persist.Persist;
 
 /**
  *
  * @author Andrey Svininykh <svininykh@gmail.com>
  */
-public class PeoplePersist {
+public class PeoplePersist extends BaseJDBCPersist {
 
     private Persist persist;
-    private static PeoplePersist instance;
 
-    public static PeoplePersist getInstance() {
-        if (instance == null) {
-            instance = new PeoplePersist();
+    public PeoplePersist() {
+        try {
+            persist = new Persist(getConnection());
+        } catch (Exception ex) {
+            Logger.getLogger(ApplicationPersist.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return instance;
     }
 
     public People findUser(String login, String password) {
-        persist = new Persist(ConnectionInstance.getConIsntance());
         String sqlStr = "SELECT * FROM PEOPLE WHERE NAME = ? AND APPPASSWORD ";
         People validUser;
         if (password.isEmpty()) {
             validUser = persist.read(People.class, sqlStr.concat("IS NULL"), login);
         } else {
-            validUser = persist.read(People.class, sqlStr.concat("= ?"), login, PasswordDecryptor.hashString(password));
+            validUser = persist.read(People.class, sqlStr.concat("= ?"), login, PasswordUtils.hashString(password));
         }
 
         return validUser;

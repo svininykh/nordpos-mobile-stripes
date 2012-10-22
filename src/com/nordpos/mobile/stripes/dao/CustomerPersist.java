@@ -1,34 +1,32 @@
 package com.nordpos.mobile.stripes.dao;
 
-import com.nordpos.mobile.stripes.util.ConnectionInstance;
 import com.nordpos.mobile.stripes.model.Customer;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.sf.persist.Persist;
 
 /**
  *
  * @author Andrey Svininykh <svininykh@gmail.com>
  */
-public class CustomerPersist {
+public class CustomerPersist extends BaseJDBCPersist {
 
     private Persist persist;
-    private static CustomerPersist instance;
 
-    public static CustomerPersist getInstance() {
-        if (instance == null) {
-            instance = new CustomerPersist();
+    public CustomerPersist() {
+        try {
+            persist = new Persist(getConnection());
+        } catch (Exception ex) {
+            Logger.getLogger(ApplicationPersist.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return instance;
     }
 
     public Customer findCustomer(String id){
-        persist = new Persist(ConnectionInstance.getConIsntance());
         return persist.read(Customer.class, "SELECT * FROM CUSTOMERS WHERE ID = ?", id);
     }
 
     public List<Customer> findCustomers(){
-        persist = new Persist(ConnectionInstance.getConIsntance());
         return persist.readList(Customer.class, "SELECT * FROM CUSTOMERS");
     }
 }

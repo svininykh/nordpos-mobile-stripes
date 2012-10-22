@@ -1,30 +1,27 @@
-
 package com.nordpos.mobile.stripes.dao;
 
 import com.nordpos.mobile.stripes.model.Application;
-import com.nordpos.mobile.stripes.util.ConnectionInstance;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.sf.persist.Persist;
 
 /**
  *
  * @author Andrey Svininykh <svininykh@gmail.com>
  */
-public class ApplicationPersist {
+public class ApplicationPersist extends BaseJDBCPersist {
 
     private Persist persist;
 
-    private static ApplicationPersist instance;
-
-    public static ApplicationPersist getInstance() {
-        if (instance == null) {
-            instance = new ApplicationPersist();
+    public ApplicationPersist() {
+        try {
+            persist = new Persist(getConnection());
+        } catch (Exception ex) {
+            Logger.getLogger(ApplicationPersist.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return instance;
     }
 
     public Application readApplication() {
-        persist = new Persist(ConnectionInstance.getConIsntance());
         Application app = persist.read(Application.class, "SELECT * FROM APPLICATIONS");
         return app;
     }

@@ -18,11 +18,12 @@ public class WelcomeActionBean extends BaseActionBean {
     private static final Logger log = Logger.getLogger(WelcomeActionBean.class);
     private static String VIEW = "/WEB-INF/jsp/welcome.jsp";
     private Application application = new Application();
+    private ApplicationPersist applicationDao = new ApplicationPersist();
 
     @DefaultHandler
     public Resolution load() {
         log.info("Loading database object for welcome.jsp.");
-        application = ApplicationPersist.getInstance().readApplication();
+        application = applicationDao.readApplication();
         return new ForwardResolution(VIEW);
     }
 
