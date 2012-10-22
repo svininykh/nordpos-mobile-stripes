@@ -23,7 +23,8 @@ public class ApplicationPersist extends BaseJDBCPersist {
     }
 
     public Application readApplication() {
-        Application app = persist.read(Application.class, "SELECT * FROM APPLICATIONS");
+        Application app = persist.read(Application.class,
+                "SELECT * FROM APPLICATIONS");
         return app;
     }
 }

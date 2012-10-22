@@ -6,7 +6,6 @@ package com.nordpos.mobile.stripes.action;
  */
 import com.nordpos.mobile.stripes.dao.ApplicationPersist;
 import com.nordpos.mobile.stripes.model.Application;
-import javax.servlet.ServletContext;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
@@ -19,7 +18,6 @@ public class WelcomeActionBean extends BaseActionBean {
     private static final Logger log = Logger.getLogger(WelcomeActionBean.class);
     private static String VIEW = "/WEB-INF/jsp/welcome.jsp";
     private Application application = new Application();
-//    private ServletContext servletContext = getServletContext();
     private ApplicationPersist applicationDao;
 
     @DefaultHandler

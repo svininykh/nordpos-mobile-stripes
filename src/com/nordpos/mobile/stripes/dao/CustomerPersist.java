@@ -23,11 +23,14 @@ public class CustomerPersist extends BaseJDBCPersist {
         }
     }
 
-    public Customer findCustomer(String id){
-        return persist.read(Customer.class, "SELECT * FROM CUSTOMERS WHERE ID = ?", id);
+    public Customer findCustomer(String id) {
+        return persist.read(Customer.class,
+                "SELECT * FROM CUSTOMERS WHERE ID = ?",
+                id);
     }
 
-    public List<Customer> findCustomers(){
-        return persist.readList(Customer.class, "SELECT * FROM CUSTOMERS");
+    public List<Customer> findCustomers() {
+        return persist.readList(Customer.class,
+                "SELECT * FROM CUSTOMERS");
     }
 }

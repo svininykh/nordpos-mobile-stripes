@@ -24,12 +24,16 @@ public class PeoplePersist extends BaseJDBCPersist {
     }
 
     public People findUser(String login, String password) {
-        String sqlStr = "SELECT * FROM PEOPLE WHERE NAME = ? AND APPPASSWORD ";
         People validUser;
         if (password.isEmpty()) {
-            validUser = persist.read(People.class, sqlStr.concat("IS NULL"), login);
+            validUser = persist.read(People.class,
+                    "SELECT * FROM PEOPLE WHERE NAME = ? AND APPPASSWORD IS NULL",
+                    login);
         } else {
-            validUser = persist.read(People.class, sqlStr.concat("= ?"), login, PasswordUtils.hashString(password));
+            validUser = persist.read(People.class,
+                    "SELECT * FROM PEOPLE WHERE NAME = ? AND APPPASSWORD = ?",
+                    login,
+                    PasswordUtils.hashString(password));
         }
 
         return validUser;
