@@ -49,7 +49,7 @@ public class PeoplePersist extends BaseJDBCPersist {
 
     public List<People> findUsers() {
         return persist.readList(People.class,
-                "SELECT * FROM PEOPLE");
+                "SELECT * FROM PEOPLE ORDER BY NAME");
     }
 
     public Integer countUsers() {

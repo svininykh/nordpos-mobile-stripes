@@ -31,7 +31,7 @@ public class CustomerPersist extends BaseJDBCPersist {
 
     public List<Customer> findCustomers() {
         return persist.readList(Customer.class,
-                "SELECT * FROM CUSTOMERS");
+                "SELECT * FROM CUSTOMERS ORDER BY NAME");
     }
 
     public Integer countCustomers() {
