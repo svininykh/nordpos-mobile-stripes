@@ -20,7 +20,7 @@
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
-        <ul data-role="listview">
+        <ul data-role="listview" data-filter="true">
             <c:forEach items="${actionBean.customers}" var="customer" >
                 <li>
                     <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
