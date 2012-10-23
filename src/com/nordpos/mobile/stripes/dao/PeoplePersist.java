@@ -1,7 +1,9 @@
 package com.nordpos.mobile.stripes.dao;
 
+import com.nordpos.mobile.stripes.model.Customer;
 import com.nordpos.mobile.stripes.model.People;
 import com.nordpos.mobile.stripes.util.PasswordUtils;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletContext;
@@ -38,4 +40,17 @@ public class PeoplePersist extends BaseJDBCPersist {
 
         return validUser;
     }
+
+    public People findUser(String id) {
+        return persist.read(People.class,
+                "SELECT * FROM PEOPLE WHERE ID = ?",
+                id);
+    }
+
+    public List<People> findUsers() {
+        return persist.readList(People.class,
+                "SELECT * FROM PEOPLE");
+    }
+
+
 }

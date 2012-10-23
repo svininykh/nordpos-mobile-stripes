@@ -33,7 +33,7 @@
                 <tfoot>
                     <tr>
                         <th scope="row" colspan="2">
-                            <stripes:submit name="login"/>
+                            <stripes:submit name="login" />
                         </th>
                     </tr>
                 </tfoot>

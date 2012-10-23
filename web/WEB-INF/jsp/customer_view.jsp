@@ -7,12 +7,12 @@
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 <stripes:layout-render name="/WEB-INF/jsp/common/layout_main.jsp"
                        title="${actionBean.customer.name} - Customers"
-                       pageid="customers">
+                       pageid="customer">
 
     <stripes:layout-component name="header">
         <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
                       class="ui-btn-left">
-            <stripes:label name="button.customers" />
+            <stripes:label name="label.customers" />
         </stripes:link>
         <h2>
             ${actionBean.customer.name}

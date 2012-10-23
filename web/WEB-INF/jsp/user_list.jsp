@@ -1,13 +1,13 @@
 <%--
-    Document   : customer_list
-    Created on : 14.10.2012, 20:47:14
+    Document   : user_list
+    Created on : 23.10.2012, 19:35:07
     Author     : svininykh-av
 --%>
 
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 <stripes:layout-render name="/WEB-INF/jsp/common/layout_main.jsp"
-                       title="Customers"
-                       pageid="customers">
+                       title="Users"
+                       pageid="users">
 
     <stripes:layout-component name="header">
         <stripes:link beanclass="com.nordpos.mobile.stripes.action.LoginActionBean"
@@ -15,18 +15,18 @@
             <stripes:label name="label.administration" />
         </stripes:link>
         <h2>
-            <stripes:label name="label.customers" />
+            <stripes:label name="label.users" />
         </h2>
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
         <ul data-role="listview">
-            <c:forEach items="${actionBean.customers}" var="customer" >
+            <c:forEach items="${actionBean.users}" var="user" >
                 <li>
-                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
+                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.UserListActionBean"
                                   event="view">
-                        <stripes:param name="customerId" value="${customer.id}" />
-                        <c:out value="${customer.name}" />
+                        <stripes:param name="userId" value="${user.id}" />
+                        <c:out value="${user.name}" />
                     </stripes:link>
                 </li>
             </c:forEach>
@@ -38,3 +38,4 @@
     </stripes:layout-component>
 
 </stripes:layout-render>
+

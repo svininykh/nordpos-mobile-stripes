@@ -19,7 +19,7 @@
             </c:when>
             <c:otherwise>
                 <h2>
-                    <stripes:label name="header.administration" />
+                    <stripes:label name="label.administration" />
                 </h2>
             </c:otherwise>
         </c:choose>
@@ -30,7 +30,13 @@
             <li>
                 <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
                               event="list">
-                    <stripes:label name="button.customers" />
+                    <stripes:label name="label.customers" />
+                </stripes:link>
+            </li>
+            <li>
+                <stripes:link beanclass="com.nordpos.mobile.stripes.action.UserListActionBean"
+                              event="list">
+                    <stripes:label name="label.users" />
                 </stripes:link>
             </li>
         </ul>
