@@ -52,5 +52,8 @@ public class PeoplePersist extends BaseJDBCPersist {
                 "SELECT * FROM PEOPLE");
     }
 
-
+    public Integer countUsers() {
+        return persist.read(Integer.class,
+                "SELECT COUNT(ID) FROM PEOPLE");
+    }
 }

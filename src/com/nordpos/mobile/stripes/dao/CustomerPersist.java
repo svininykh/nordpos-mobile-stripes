@@ -33,4 +33,9 @@ public class CustomerPersist extends BaseJDBCPersist {
         return persist.readList(Customer.class,
                 "SELECT * FROM CUSTOMERS");
     }
+
+    public Integer countCustomers() {
+        return persist.read(Integer.class,
+                "SELECT COUNT(ID) FROM CUSTOMERS");
+    }
 }

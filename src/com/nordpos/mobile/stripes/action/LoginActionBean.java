@@ -4,6 +4,7 @@ package com.nordpos.mobile.stripes.action;
  *
  * @author Andrey Svininykh <svininykh@gmail.com>
  */
+import com.nordpos.mobile.stripes.dao.CustomerPersist;
 import com.nordpos.mobile.stripes.dao.PeoplePersist;
 import com.nordpos.mobile.stripes.model.People;
 import net.sourceforge.stripes.action.DefaultHandler;
@@ -18,6 +19,7 @@ public class LoginActionBean extends BaseActionBean {
     private static final String LOGIN = "/WEB-INF/jsp/administration.jsp";
     private People loginUser = new People();
     private PeoplePersist peopleDao;
+    private CustomerPersist customerDao;
     private String loginName = "";
     private String loginPassword = "";
 
@@ -38,5 +40,15 @@ public class LoginActionBean extends BaseActionBean {
 
     public void setLoginPassword(String loginPassword) {
         this.loginPassword = loginPassword;
+    }
+
+    public Integer getCountCustomers() {
+        customerDao = new CustomerPersist(getServletContext());
+        return customerDao.countCustomers();
+    }
+
+    public Integer getCountUsers() {
+        peopleDao = new PeoplePersist(getServletContext());
+        return peopleDao.countUsers();
     }
 }

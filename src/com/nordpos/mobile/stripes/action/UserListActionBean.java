@@ -4,14 +4,11 @@ package com.nordpos.mobile.stripes.action;
  *
  * @author Andrey Svininykh <svininykh@gmail.com>
  */
-import com.nordpos.mobile.stripes.dao.CustomerPersist;
 import com.nordpos.mobile.stripes.dao.PeoplePersist;
-import com.nordpos.mobile.stripes.model.Customer;
 import com.nordpos.mobile.stripes.model.People;
 import java.util.List;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
-import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
 
 public class UserListActionBean extends BaseActionBean {

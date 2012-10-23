@@ -32,12 +32,14 @@
                               event="list">
                     <stripes:label name="label.customers" />
                 </stripes:link>
+                <span class="ui-li-count">${actionBean.countCustomers}</span>
             </li>
             <li>
                 <stripes:link beanclass="com.nordpos.mobile.stripes.action.UserListActionBean"
                               event="list">
                     <stripes:label name="label.users" />
                 </stripes:link>
+                <span class="ui-li-count">${actionBean.countUsers}</span>
             </li>
         </ul>
     </stripes:layout-component>
