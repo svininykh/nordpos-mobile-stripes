@@ -23,16 +23,17 @@
                 </h2>
             </c:otherwise>
         </c:choose>
-
-        <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
-                      event="list"
-                      class="ui-btn-right">
-            <stripes:label name="button.customers" />
-        </stripes:link>
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
-
+        <ul data-role="listview">
+            <li>
+                <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
+                              event="list">
+                    <stripes:label name="button.customers" />
+                </stripes:link>
+            </li>
+        </ul>
     </stripes:layout-component>
 
     <stripes:layout-component name="footer">

@@ -10,6 +10,10 @@
                        pageid="customers">
 
     <stripes:layout-component name="header">
+        <stripes:link beanclass="com.nordpos.mobile.stripes.action.LoginActionBean"
+                      class="ui-btn-left">
+            <stripes:label name="header.administration" />
+        </stripes:link>
         <h2>
             <stripes:label name="button.customers" />
         </h2>
