@@ -12,6 +12,12 @@
             <link rel="stylesheet" href="<c:url value='/css/jquery.mobile-1.1.1.min.css'/>" />
             <script src="<c:url value='/js/jquery.min.js'/>"></script>
             <script src="<c:url value='/js/jquery.mobile-1.2.0.min.js'/>"></script>
+            <style type="text/css">
+                table { width:100%; }
+                table caption { text-align:left;  }
+                table thead th { text-align:left; border-bottom-width:1px; border-top-width:1px; }
+                table th, td { text-align:left; padding:6px;}
+            </style>
         </head>
         <body>
             <div data-role="page" id="${pageid}">

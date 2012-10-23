@@ -18,12 +18,12 @@
     <stripes:layout-component name="content">
         <ul data-role="listview">
             <c:forEach items="${actionBean.customers}" var="customer" >
-                <li><c:out value="${customer.name}" />
-                    <ul data-role="listview">
-                        <li><c:out value="${customer.id}" /></li>
-                        <li><c:out value="${customer.searchKey}" /></li>
-                        <li><c:out value="${customer.taxId}" /></li>
-                    </ul>
+                <li>
+                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
+                                  event="view">
+                        <stripes:param name="customerId" value="${customer.id}" />
+                        <c:out value="${customer.name}" />
+                    </stripes:link>
                 </li>
             </c:forEach>
         </ul>

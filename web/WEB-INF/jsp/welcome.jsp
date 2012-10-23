@@ -10,29 +10,33 @@
                        pageid="welcome">
 
     <stripes:layout-component name="header">
-            <h2>
-                <stripes:label name="message.welcome" />
-                <c:out value="${actionBean.application.name}" />
-                <c:out value="${actionBean.application.version}" />!
-            </h2>
+        <h2>
+            <stripes:label name="message.welcome" />
+            <c:out value="${actionBean.application.name}" />
+            <c:out value="${actionBean.application.version}" />!
+        </h2>
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
         <stripes:form beanclass="com.nordpos.mobile.stripes.action.LoginActionBean" focus="">
-            <table>
-                <tr>
-                    <td><stripes:label name="label.login.name" /></td>
-                    <td><stripes:text name="loginName"/></td>
-                </tr>
-                <tr>
-                    <td><stripes:label name="label.login.password" /></td>
-                    <td><stripes:password name="loginPassword"/></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <stripes:submit name="login"/>
-                    </td>
-                </tr>
+            <table summary="Enter user name and password.">
+                <tbody>
+                    <tr>
+                        <th scope="row"><stripes:label name="label.login.name" /></th>
+                        <td><stripes:text name="loginName"/></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><stripes:label name="label.login.password" /></th>
+                        <td><stripes:password name="loginPassword"/></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row" colspan="2">
+                            <stripes:submit name="login"/>
+                        </th>
+                    </tr>
+                </tfoot>
             </table>
         </stripes:form>
     </stripes:layout-component>

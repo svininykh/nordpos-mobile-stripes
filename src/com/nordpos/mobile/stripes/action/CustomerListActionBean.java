@@ -12,7 +12,6 @@ import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
 
-
 public class CustomerListActionBean extends BaseActionBean {
 
     private static final String LIST = "/WEB-INF/jsp/customer_list.jsp";
@@ -34,16 +33,17 @@ public class CustomerListActionBean extends BaseActionBean {
 //        return new RedirectResolution(getClass());
 //    }
 
-//    public void setCustomerId(String id) {
-//        customerId = id;
-//    }
-//
-//    public Customer getCustomers() {
-//        return customerDao.findCustomer(customerId);
-//    }
+    public void setCustomerId(String id) {
+        customerId = id;
+    }
+
+    public Customer getCustomer() {
+        customerDao = new CustomerPersist(getServletContext());
+        return customerDao.findCustomer(customerId);
+    }
 
     public List<Customer> getCustomers() {
-        customerDao =  new CustomerPersist(getServletContext());
+        customerDao = new CustomerPersist(getServletContext());
         return customerDao.findCustomers();
     }
 }
