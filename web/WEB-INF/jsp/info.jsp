@@ -30,11 +30,30 @@
             </p>
         </c:if>
 
-        <h3><c:out value="${actionBean.country}" /></h3>
-        <h3><c:out value="${actionBean.language}" /></h3>
-        <h3><c:out value="${actionBean.serverInfo}" /></h3>
-        <h3><c:out value="${actionBean.dataBaseDriver}" /></h3>
-        <h3><c:out value="${actionBean.dataBaseURL}" /></h3>
+        <table summary="Information about servlet.">
+            <tbody>
+                <tr>
+                    <th scope="row"><stripes:label name="label.info.server" /></th>
+                    <td><c:out value="${actionBean.serverInfo}" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><stripes:label name="label.info.language" /></th>
+                    <td><c:out value="${actionBean.language}" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><stripes:label name="label.info.country" /></th>
+                    <td><c:out value="${actionBean.country}" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><stripes:label name="label.db.driver" /></th>
+                    <td><c:out value="${actionBean.dataBaseDriver}" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><stripes:label name="label.db.url" /></th>
+                    <td><c:out value="${actionBean.dataBaseURL}" /></td>
+                </tr>
+            </tbody>
+        </table>
 
     </stripes:layout-component>
 
