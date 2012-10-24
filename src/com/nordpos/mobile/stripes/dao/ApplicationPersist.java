@@ -12,8 +12,6 @@ import net.sf.persist.Persist;
  */
 public class ApplicationPersist extends BaseJDBCPersist {
 
-    private Persist persist;
-
     public ApplicationPersist(ServletContext servletContext) {
         try {
             persist = new Persist(getConnection(servletContext));

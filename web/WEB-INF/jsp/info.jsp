@@ -11,7 +11,6 @@
 
     <stripes:layout-component name="header">
         <stripes:link href="/stripes/action/Application.action"
-                      event="back"
                       class="ui-btn-left">
             <stripes:label name="label.title" />
         </stripes:link>
@@ -21,6 +20,15 @@
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
+
+        <c:if test="${actionBean.connectionStatus != true}">
+            <h2>
+                <stripes:label name="message.db.connection.fail" />
+            </h2>
+            <p>
+                <stripes:label name="description.check.db.parameters" />
+            </p>
+        </c:if>
 
         <h3><c:out value="${actionBean.country}" /></h3>
         <h3><c:out value="${actionBean.language}" /></h3>

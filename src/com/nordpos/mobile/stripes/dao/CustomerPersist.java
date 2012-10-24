@@ -13,8 +13,6 @@ import net.sf.persist.Persist;
  */
 public class CustomerPersist extends BaseJDBCPersist {
 
-    private Persist persist;
-
     public CustomerPersist(ServletContext servletContext) {
         try {
             persist = new Persist(getConnection(servletContext));
