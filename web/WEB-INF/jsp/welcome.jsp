@@ -15,6 +15,11 @@
             <c:out value="${actionBean.application.name}" />
             <c:out value="${actionBean.application.version}" />!
         </h2>
+        <stripes:link href="/stripes/action/Application.action"
+                      event="info"
+                      class="ui-btn-right">
+            <stripes:label name="label.information" />
+        </stripes:link>
     </stripes:layout-component>
 
     <stripes:layout-component name="content">

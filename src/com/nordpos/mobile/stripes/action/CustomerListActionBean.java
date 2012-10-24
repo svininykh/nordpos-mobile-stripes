@@ -9,7 +9,6 @@ import com.nordpos.mobile.stripes.model.Customer;
 import java.util.List;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
-import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
 
 public class CustomerListActionBean extends BaseActionBean {
@@ -27,11 +26,6 @@ public class CustomerListActionBean extends BaseActionBean {
     public Resolution view() {
         return new ForwardResolution(VIEW);
     }
-
-//    public Resolution delete() {
-//        customerDao.delete(customerId);
-//        return new RedirectResolution(getClass());
-//    }
 
     public void setCustomerId(String id) {
         customerId = id;
