@@ -1,4 +1,5 @@
 # [NORD POS](http://www.nordpos.com) mobile servlet #
+Apache License, Version 2.0 ([ALv2](http://www.apache.org/licenses/LICENSE-2.0.html))
 
 ## Java web application powered by [Stripes Framework](http://www.stripesframework.org) ##
 
