@@ -20,7 +20,14 @@
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
-        <ul data-role="listview" data-filter="true">
+        <ul data-role="listview"
+            data-filter="true"
+            data-filter-placeholder="Search user...">
+            <c:forEach items="${actionBean.roles}" var="role" >
+                <li data-role="list-divider">
+                    <c:out value="${role.name}" />
+                </li>
+            </c:forEach>
             <c:forEach items="${actionBean.users}" var="user" >
                 <li>
                     <stripes:link beanclass="com.nordpos.mobile.stripes.action.UserListActionBean"
