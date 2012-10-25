@@ -5,7 +5,6 @@ package com.nordpos.mobile.stripes.action;
  * @author Andrey Svininykh <svininykh@gmail.com>
  */
 import com.nordpos.mobile.stripes.dao.ApplicationPersist;
-import com.nordpos.mobile.stripes.dao.BaseJDBCPersist;
 import com.nordpos.mobile.stripes.model.Application;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;

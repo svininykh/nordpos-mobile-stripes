@@ -11,7 +11,6 @@
 
     <stripes:layout-component name="header">
         <stripes:link href="/stripes/action/Application.action"
-                      event="back"
                       class="ui-btn-left">
             <stripes:label name="label.title" />
         </stripes:link>
