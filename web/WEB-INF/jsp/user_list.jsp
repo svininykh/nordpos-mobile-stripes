@@ -27,15 +27,13 @@
                 <li data-role="list-divider">
                     <c:out value="${role.name}" />
                 </li>
-            </c:forEach>
-            <c:forEach items="${actionBean.users}" var="user" >
-                <li>
-                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.UserListActionBean"
-                                  event="view">
-                        <stripes:param name="userId" value="${user.id}" />
-                        <c:out value="${user.name}" />
-                    </stripes:link>
-                </li>
+                <c:forEach items="${actionBean.users}" var="user" >
+                    <c:if test="${user.role.equals(role.id)}">
+                        <li>
+                            <c:out value="${user.name}" />
+                        </li>
+                    </c:if>
+                </c:forEach>
             </c:forEach>
         </ul>
     </stripes:layout-component>
