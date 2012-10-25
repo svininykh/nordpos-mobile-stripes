@@ -1,4 +1,4 @@
-# [NORD POS](http://www.nordpos.com) mobile #
+# [NORD POS](http://www.nordpos.com) mobile servlet #
 
 ## Java web application powered by [Stripes Framework](http://www.stripesframework.org) ##
 
