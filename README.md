@@ -1,13 +1,10 @@
-# NORD POS mobile #
-www.nordpos.com
+# [NORD POS](http://www.nordpos.com) mobile servlet #
+Apache License, Version 2.0 ([ALv2](http://www.apache.org/licenses/LICENSE-2.0.html))
 
-# Java web application powered by Stripes Framework #
-www.stripesframework.org
+## Java web application powered by [Stripes Framework](http://www.stripesframework.org) ##
 
-# Java data access object powered by Persist ORM/DAO #
-https://github.com/rufiao/persist
+## Java data access object powered by [Persist ORM/DAO](http://github.com/rufiao/persist) ##
 
-# Mobile user interface powered by jQuery Mobile #
-www.jquerymobile.com
+## Mobile user interface powered by [jQuery Mobile](http://www.jquerymobile.com) ##
 
 This is servlet for [create, read, update and delete](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) database tables of [Openbravo Java Client POS](http://wiki.openbravo.com/wiki/Projects:POS/FAQ/javapos). Also, this servlet compatible with many other Openbravo POS forks([NORD POS](http://www.nordpos.com/), [OpenPOS](http://forge.openbravo.com/projects/Openpos), [uniCenta oPOS](http://sourceforge.net/projects/unicentaopos/) and etc.)
