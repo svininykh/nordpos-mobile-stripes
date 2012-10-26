@@ -35,6 +35,14 @@
         <table summary="Information about servlet.">
             <tbody>
                 <tr>
+                    <th scope="row"><stripes:label name="label.info.java.version" /></th>
+                    <td><c:out value="${actionBean.javaVersion}" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><stripes:label name="label.info.os" /></th>
+                    <td><c:out value="${actionBean.operationSystem}" /></td>
+                </tr>
+                <tr>
                     <th scope="row"><stripes:label name="label.info.server" /></th>
                     <td><c:out value="${actionBean.serverInfo}" /></td>
                 </tr>
