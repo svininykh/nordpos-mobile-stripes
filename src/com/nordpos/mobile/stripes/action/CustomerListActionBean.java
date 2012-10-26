@@ -56,4 +56,8 @@ public class CustomerListActionBean extends BaseActionBean {
         customerDao = new CustomerPersist(getServletContext());
         return customerDao.findCustomers();
     }
+
+    public Integer getCountCustomers() {
+        return getCustomers().size();
+    }
 }

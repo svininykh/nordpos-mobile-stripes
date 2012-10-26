@@ -18,6 +18,7 @@
         </stripes:link>
         <h2>
             <stripes:label name="label.customers" />
+            <span class="count ui-btn-up-c ui-btn-corner-all">${actionBean.countCustomers}</span>
         </h2>
     </stripes:layout-component>
 
