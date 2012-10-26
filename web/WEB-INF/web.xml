@@ -55,7 +55,7 @@
         </init-param>
         <init-param>
             <param-name>LocalePicker.Locales</param-name>
-            <param-value>ru_RU:UTF-8,en_US</param-value>
+            <param-value>ru_RU:UTF-8,en_US:UTF-8</param-value>
         </init-param>
     </filter>
     <filter-mapping>
