@@ -1,7 +1,9 @@
 <%--
     Document   : customer_view
     Created on : 23.10.2012, 12:50:09
-    Author     : svininykh-av
+    Author     : Andrey Svininykh (svininykh@gmail.com)
+    Copyright  : Nord Trading Ltd.
+    License    : Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 --%>
 
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>

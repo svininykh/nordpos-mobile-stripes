@@ -1,7 +1,9 @@
 <%--
     Document   : index
     Created on : 09.10.2012, 12:06:35
-    Author     : Andrey Svininykh
+    Author     : Andrey Svininykh (svininykh@gmail.com)
+    Copyright  : Nord Trading Ltd.
+    License    : Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
