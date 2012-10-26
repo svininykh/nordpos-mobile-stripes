@@ -18,6 +18,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <title>${title} - NORD POS mobile</title>
             <link rel="stylesheet" href="<c:url value='/css/jquery.mobile-1.2.0.min.css'/>" />
+            <link rel="icon" type="image/png" href="<c:url value='/icon.png' />" />
             <script src="<c:url value='/js/jquery-1.8.2.min.js'/>"></script>
             <script src="<c:url value='/js/jquery.mobile-1.2.0.min.js'/>"></script>
             <style type="text/css">
