@@ -5,11 +5,15 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
                              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
+    <display-name>NordPosMobileStripes</display-name>
+
+    <!-- STRIPES LOCALIZATION PARAMETERS -->
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
         <param-value>StripesResources</param-value>
     </context-param>
 
+    <!-- DATABASE CONECTION PARAMETERS -->
     <context-param>
         <param-name>db.driver</param-name>
         <param-value>com.mysql.jdbc.Driver</param-value>
@@ -18,46 +22,52 @@
         <param-name>db.URL</param-name>
         <param-value>jdbc:mysql://localhost:3306/nordpos-db</param-value>
     </context-param>
-        <context-param>
+    <context-param>
         <param-name>db.user</param-name>
         <param-value>root</param-value>
     </context-param>
-        <context-param>
+    <context-param>
         <param-name>db.password</param-name>
         <param-value>root</param-value>
     </context-param>
 
 <!--
-    <context-param>
-        <param-name>db.driver</param-name>
-        <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
-    </context-param>
-    <context-param>
-        <param-name>db.URL</param-name>
-        <param-value>jdbc:derby://localhost:1527/nordpos-db</param-value>
-    </context-param>
         <context-param>
-        <param-name>db.user</param-name>
-        <param-value>nord</param-value>
-    </context-param>
+            <param-name>db.driver</param-name>
+            <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+        </context-param>
         <context-param>
-        <param-name>db.password</param-name>
-        <param-value>nord</param-value>
-    </context-param>
+            <param-name>db.URL</param-name>
+            <param-value>jdbc:derby://localhost:1527/nordpos-db</param-value>
+        </context-param>
+            <context-param>
+            <param-name>db.user</param-name>
+            <param-value>nord</param-value>
+        </context-param>
+            <context-param>
+            <param-name>db.password</param-name>
+            <param-value>nord</param-value>
+        </context-param>
 -->
 
     <filter>
         <filter-name>StripesFilter</filter-name>
         <filter-class>net.sourceforge.stripes.controller.StripesFilter</filter-class>
+
+        <!-- STRIPES ACTIONS -->
         <init-param>
             <param-name>ActionResolver.Packages</param-name>
             <param-value>com.nordpos.mobile.stripes</param-value>
         </init-param>
+
+        <!-- STRIPES LOCALES -->
         <init-param>
             <param-name>LocalePicker.Locales</param-name>
             <param-value>ru_RU:UTF-8,en_US:UTF-8</param-value>
         </init-param>
     </filter>
+
+    <!-- FILTER MAPPINGS -->
     <filter-mapping>
         <filter-name>StripesFilter</filter-name>
         <url-pattern>*.jsp</url-pattern>
@@ -68,14 +78,17 @@
         <filter-name>StripesFilter</filter-name>
         <servlet-name>StripesDispatcher</servlet-name>
         <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
 
+    <!-- SERVLETS -->
     <servlet>
         <servlet-name>StripesDispatcher</servlet-name>
         <servlet-class>net.sourceforge.stripes.controller.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <!-- SERVLETS MAPPINGS -->
     <servlet-mapping>
         <servlet-name>StripesDispatcher</servlet-name>
         <url-pattern>/dispatcher</url-pattern>
@@ -91,4 +104,8 @@
         <url-pattern>/action/*</url-pattern>
     </servlet-mapping>
 
+    <!-- WELCOME FILES -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
