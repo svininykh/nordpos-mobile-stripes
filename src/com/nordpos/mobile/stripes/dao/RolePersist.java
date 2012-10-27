@@ -33,7 +33,7 @@ public class RolePersist extends BaseJDBCPersist {
         try {
             persist = new Persist(getConnection(servletContext));
         } catch (Exception ex) {
-            Logger.getLogger(ApplicationPersist.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RolePersist.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
