@@ -40,7 +40,7 @@ public class PeoplePersist extends BaseJDBCPersist {
 
     public People findUser(String login, String password) {
         People validUser;
-        if (password.isEmpty()) {
+        if (password == null) {
             validUser = persist.read(People.class,
                     "SELECT * FROM PEOPLE WHERE NAME = ? AND APPPASSWORD IS NULL",
                     login);
