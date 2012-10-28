@@ -22,12 +22,12 @@ package com.nordpos.mobile.stripes.action;
 import com.nordpos.mobile.stripes.dao.CustomerPersist;
 import com.nordpos.mobile.stripes.dao.PeoplePersist;
 import com.nordpos.mobile.stripes.model.People;
+import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
 import org.apache.log4j.Logger;
 
-//@UrlBinding("/stripes/action")
 public class LoginActionBean extends BaseActionBean {
 
     private static final Logger log = Logger.getLogger(LoginActionBean.class);
@@ -38,6 +38,11 @@ public class LoginActionBean extends BaseActionBean {
     private CustomerPersist customerDao;
     private String loginName;
     private String loginPassword;
+
+    @DefaultHandler
+    public Resolution view() {
+        return new ForwardResolution(LOGIN);
+    }
 
     public Resolution login() {
         peopleDao = new PeoplePersist(getServletContext());

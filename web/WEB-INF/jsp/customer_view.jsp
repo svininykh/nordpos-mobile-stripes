@@ -12,7 +12,7 @@
                        pageid="customer">
 
     <stripes:layout-component name="header">
-        <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
+        <stripes:link href="CustomerList.action"
                       class="ui-btn-left">
             <stripes:label name="label.customers" />
         </stripes:link>

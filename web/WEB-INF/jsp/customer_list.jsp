@@ -12,7 +12,7 @@
                        pageid="customers">
 
     <stripes:layout-component name="header">
-        <stripes:link beanclass="com.nordpos.mobile.stripes.action.LoginActionBean"
+        <stripes:link href="Login.action"
                       class="ui-btn-left">
             <stripes:label name="label.administration" />
         </stripes:link>
