@@ -17,7 +17,7 @@
             <stripes:label name="label.title" />
         </stripes:link>
         <c:choose>
-            <c:when test="${actionBean.loginUser != null}">
+            <c:when test="${actionBean.loginUser.id != null}">
                 <h2>
                     <stripes:label name="message.hello" />
                     <c:out value="${actionBean.loginUser.name}" />!
