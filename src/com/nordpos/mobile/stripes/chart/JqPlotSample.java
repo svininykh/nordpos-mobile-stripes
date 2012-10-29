@@ -9,8 +9,15 @@ import br.com.digilabs.jqplot.chart.AreaChart;
 import br.com.digilabs.jqplot.chart.BarChart;
 import br.com.digilabs.jqplot.chart.LineChart;
 import br.com.digilabs.jqplot.chart.PieChart;
+import br.com.digilabs.jqplot.data.item.LabeledItem;
+import br.com.digilabs.jqplot.elements.Legend;
+import br.com.digilabs.jqplot.elements.Location;
 import br.com.digilabs.jqplot.elements.Serie;
+import com.nordpos.mobile.stripes.action.BaseActionBean;
+import com.nordpos.mobile.stripes.dao.PeoplePersist;
 import java.util.Arrays;
+import java.util.Iterator;
+import javax.servlet.ServletContext;
 
 /**
  *
@@ -18,23 +25,8 @@ import java.util.Arrays;
  */
 public class JqPlotSample {
 
-    public static String lineChart(String divId) {
-        LineChart<Integer> lineChart;
-        lineChart = new LineChart<Integer>("Line Chart");
-        lineChart.addValues(1, 2, 3, 4, 5);
-        return JqPlotUtils.createJquery(lineChart, divId);
-    }
-
-    public static String areaChart(String divId) {
-        AreaChart<Integer> areaChart;
-        areaChart = new AreaChart<Integer>("Area Char");
-        areaChart.addValue(Arrays.<Integer>asList(11, 9, 5, 12, 14));
-        areaChart.addValue(Arrays.<Integer>asList(4, 8, 5, 3, 6));
-        areaChart.addValue(Arrays.<Integer>asList(12, 6, 13, 11, 2));
-        return JqPlotUtils.createJquery(areaChart, divId);
-    }
-
-    public static String barChart(String divId) {
+    public static String barChart(ServletContext sc, String divId) {
+        PeoplePersist peopleDao = new PeoplePersist(sc);
         BarChart<Integer> barChart;
         barChart = new BarChart<Integer>("Bar Chart");
 
@@ -44,22 +36,22 @@ public class JqPlotSample {
         barChart.setHighlightMouseDown(true);
 
         barChart.setBarMargin(30);
-        barChart.setTicks("A", "B", "C", "D");
-        barChart.addValue(Arrays.<Integer>asList(200, 600, 700, 1000));
-        barChart.addValue(Arrays.<Integer>asList(200, 600, 700, 1000));
-        barChart.addValue(Arrays.<Integer>asList(200, 600, 700, 1000));
+//        barChart.setTicks("A", "B", "C", "D");
+        barChart.addValue(peopleDao.countUserTickets());
 
-        // Texto das Legendas.
-        barChart.addSeries(new Serie("A"), new Serie("B"), new Serie("C"));
         return JqPlotUtils.createJquery(barChart, divId);
     }
 
-    public static String pieChart(String divId) {
-        PieChart<Number> pizzaChart = new PieChart<Number>("Pizza Chart");
-        pizzaChart.addValue("Drops", 10f);
-        pizzaChart.addValue("Chocolate", 20f);
-        pizzaChart.addValue("Jujuba", 5f);
+    public static String pieChart(ServletContext sc, String divId) {
+        PeoplePersist peopleDao = new PeoplePersist(sc);
+        PieChart<Integer> pizzaChart = new PieChart<Integer>("Pizza Chart");
+
+        Iterator<Integer> tickets = peopleDao.readUserTickets();
+        while (tickets.hasNext()) {
+            pizzaChart.addValue("", tickets.next());
+        }
+
+        pizzaChart.setLegend(new Legend(false, Location.e));
         return JqPlotUtils.createJquery(pizzaChart, divId);
     }
-
 }

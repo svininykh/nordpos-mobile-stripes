@@ -42,11 +42,6 @@
             <script language="javascript" type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script>
 
             <style type="text/css">
-                table { width:100%; }
-                table caption { text-align:left;  }
-                table thead th { text-align:left; border-bottom-width:1px; border-top-width:1px; }
-                table th, td { text-align:left; padding:6px;}
-
                 .jqplot-target {
                     margin-bottom: 2em;
                 }
@@ -77,10 +72,8 @@
             <script class="code" type="text/javascript">
 
                 $(document).ready(function () {
-                <%=JqPlotSample.lineChart("lineChart")%>
-                <%=JqPlotSample.areaChart("areaChart")%>
-                <%=JqPlotSample.barChart("barChart")%>
-                <%=JqPlotSample.pieChart("pieChart")%>
+                <%=JqPlotSample.barChart(getServletContext(), "barChart")%>
+                <%=JqPlotSample.pieChart(getServletContext(), "pieChart")%>
                     });
 
             </script>

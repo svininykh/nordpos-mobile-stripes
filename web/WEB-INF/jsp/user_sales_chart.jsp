@@ -19,10 +19,8 @@
 
     <stripes:layout-component name="content">
         <div>
-            <div id="lineChart" style="margin-top:0px; margin-left:0px; width:300px; height:200px;"></div>
-            <div id="areaChart" style="margin-top:0px; margin-left:0px; width:300px; height:200px;"></div>
-            <div id="barChart" style="margin-top:0px; margin-left:0px; width:300px; height:200px;"></div>
             <div id="pieChart" style="margin-top:0px; margin-left:0px; width:300px; height:300px;"></div>
+            <div id="barChart" style="margin-top:0px; margin-left:0px; width:300px; height:200px;"></div>
         </div>
     </stripes:layout-component>
 

@@ -18,6 +18,7 @@ package com.nordpos.mobile.stripes.dao;
 
 import com.nordpos.mobile.stripes.model.People;
 import com.nordpos.mobile.stripes.util.PasswordUtils;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -68,5 +69,21 @@ public class PeoplePersist extends BaseJDBCPersist {
     public Integer countUsers() {
         return persist.read(Integer.class,
                 "SELECT COUNT(ID) FROM PEOPLE");
+    }
+
+    public List<Integer> countUserTickets() {
+        return persist.readList(Integer.class,
+                "SELECT COUNT(TICKETS.TICKETID) "
+                + "FROM PEOPLE "
+                + "LEFT OUTER JOIN TICKETS ON TICKETS.PERSON = PEOPLE.ID "
+                + "GROUP BY PEOPLE.NAME");
+    }
+
+    public Iterator<Integer> readUserTickets() {
+        return persist.readIterator(Integer.class,
+                "SELECT COUNT(TICKETS.TICKETID) "
+                + "FROM PEOPLE "
+                + "LEFT OUTER JOIN TICKETS ON TICKETS.PERSON = PEOPLE.ID "
+                + "GROUP BY PEOPLE.NAME");
     }
 }
