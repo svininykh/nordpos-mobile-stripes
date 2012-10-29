@@ -7,6 +7,7 @@
 --%>
 
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
+<%@page import="com.nordpos.mobile.stripes.chart.JqPlotSample" %>
 <stripes:layout-render name="/WEB-INF/jsp/common/layout_chart.jsp"
                        title="Sales - Users"
                        pageid="usersales">
@@ -18,6 +19,14 @@
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
+        <script class="code" type="text/javascript">
+
+            $(document).ready(function () {
+            <%=JqPlotSample.barChart(getServletContext(), "barChart")%>
+            <%=JqPlotSample.pieChart(getServletContext(), "pieChart")%>
+                });
+
+        </script>
         <div>
             <div id="pieChart" style="margin-top:0px; margin-left:0px; width:300px; height:300px;"></div>
             <div id="barChart" style="margin-top:0px; margin-left:0px; width:300px; height:200px;"></div>

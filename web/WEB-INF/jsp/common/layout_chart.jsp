@@ -7,7 +7,6 @@
 --%>
 
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="com.nordpos.mobile.stripes.chart.JqPlotSample" %>
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 
 <stripes:layout-definition>
@@ -69,14 +68,6 @@
 
                 }
             </style>
-            <script class="code" type="text/javascript">
-
-                $(document).ready(function () {
-                <%=JqPlotSample.barChart(getServletContext(), "barChart")%>
-                <%=JqPlotSample.pieChart(getServletContext(), "pieChart")%>
-                    });
-
-            </script>
         </head>
         <body>
             <div data-role="page" id="${pageid}">
