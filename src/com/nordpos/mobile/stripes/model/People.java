@@ -1,25 +1,27 @@
 /**
- *  Copyright (c) 2012 Nord Trading Ltd.
+ * Copyright (c) 2012 Nord Trading Ltd.
  *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  */
-
 package com.nordpos.mobile.stripes.model;
+
+import net.sf.persist.annotations.NoTable;
 
 /**
  *
  * @author Andrey Svininykh <svininykh@gmail.com>
  */
+@NoTable
 public class People {
 
     private String id;
@@ -29,6 +31,7 @@ public class People {
     private String role;
     private Boolean visible;
     private Byte[] image;
+    private Integer ticketssales;
 
     public String getId() {
         return id;
@@ -84,5 +87,13 @@ public class People {
 
     public void setImage(Byte[] image) {
         this.image = image;
+    }
+
+    public Integer getTicketsSales() {
+        return ticketssales;
+    }
+
+    public void setTicketsSales(Integer ticketssales) {
+        this.ticketssales = ticketssales;
     }
 }

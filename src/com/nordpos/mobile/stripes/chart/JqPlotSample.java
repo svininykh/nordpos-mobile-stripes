@@ -15,7 +15,9 @@ import br.com.digilabs.jqplot.elements.Location;
 import br.com.digilabs.jqplot.elements.Serie;
 import com.nordpos.mobile.stripes.action.BaseActionBean;
 import com.nordpos.mobile.stripes.dao.PeoplePersist;
+import com.nordpos.mobile.stripes.model.People;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Iterator;
 import javax.servlet.ServletContext;
 
@@ -46,12 +48,12 @@ public class JqPlotSample {
         PeoplePersist peopleDao = new PeoplePersist(sc);
         PieChart<Integer> pizzaChart = new PieChart<Integer>("Pizza Chart");
 
-        Iterator<Integer> tickets = peopleDao.readUserTickets();
-        while (tickets.hasNext()) {
-            pizzaChart.addValue("", tickets.next());
+        Iterator ticketsSales = peopleDao.readUserTickets();
+        while (ticketsSales.hasNext()) {
+            People currentUser = (People) ticketsSales.next();
+            pizzaChart.addValue(currentUser.getName(), currentUser.getTicketsSales());
         }
 
-        pizzaChart.setLegend(new Legend(false, Location.e));
         return JqPlotUtils.createJquery(pizzaChart, divId);
     }
 }

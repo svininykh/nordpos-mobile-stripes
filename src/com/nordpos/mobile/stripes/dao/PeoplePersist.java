@@ -79,11 +79,13 @@ public class PeoplePersist extends BaseJDBCPersist {
                 + "GROUP BY PEOPLE.NAME");
     }
 
-    public Iterator<Integer> readUserTickets() {
-        return persist.readIterator(Integer.class,
-                "SELECT COUNT(TICKETS.TICKETID) "
+    public Iterator readUserTickets() {
+        return persist.readIterator(People.class,
+                "SELECT PEOPLE.NAME, "
+                + "COUNT(TICKETS.TICKETID) AS TICKETSSALES "
                 + "FROM PEOPLE "
                 + "LEFT OUTER JOIN TICKETS ON TICKETS.PERSON = PEOPLE.ID "
-                + "GROUP BY PEOPLE.NAME");
+                + "GROUP BY PEOPLE.NAME "
+                + "ORDER BY PEOPLE.NAME");
     }
 }
