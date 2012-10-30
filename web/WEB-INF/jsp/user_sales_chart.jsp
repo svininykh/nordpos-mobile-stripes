@@ -29,7 +29,7 @@
         </script>
         <div>
             <div id="pieChart" style="margin-top:0px; margin-left:0px; width:300px; height:200px;"></div>
-            <div id="barChart" style="margin-top:0px; margin-left:0px; width:300px; height:200px;"></div>
+            <div id="barChart" style="margin-top:0px; margin-left:0px; width:400px; height:250px;"></div>
         </div>
     </stripes:layout-component>
 

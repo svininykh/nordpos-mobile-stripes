@@ -16,9 +16,11 @@ import br.com.digilabs.jqplot.elements.Serie;
 import com.nordpos.mobile.stripes.action.BaseActionBean;
 import com.nordpos.mobile.stripes.dao.PeoplePersist;
 import com.nordpos.mobile.stripes.model.People;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 import javax.servlet.ServletContext;
 
 /**
@@ -32,14 +34,31 @@ public class JqPlotSample {
         BarChart<Integer> barChart;
         barChart = new BarChart<Integer>("Bar Chart");
 
+        Iterator ticketsSales = peopleDao.readUserTickets();
+        List<String> namesList = new ArrayList<String>();
+        List<Integer> ticketsList = new ArrayList<Integer>();
+
+        while (ticketsSales.hasNext()) {
+            People currentUser = (People) ticketsSales.next();
+            namesList.add(currentUser.getName());
+            ticketsList.add(currentUser.getTicketsSales());
+        }
+
+        barChart.setTicks(namesList.toArray(new String[0]));
+        barChart.addValue(ticketsList);
+
         barChart.setPadMin(1.05f);
         barChart.setStackSeries(true);
         barChart.setCaptureRightClick(true);
         barChart.setHighlightMouseDown(true);
 
         barChart.setBarMargin(30);
-//        barChart.setTicks("A", "B", "C", "D");
-        barChart.addValue(peopleDao.countUserTickets());
+
+        barChart.setLabelX("Users");
+        barChart.setLabelY("Tickets");
+
+        barChart.getChartConfiguration().getAxes().getYaxis().setMin("");
+        barChart.getChartConfiguration().getAxes().getYaxis().setMax("20");
 
         return JqPlotUtils.createJquery(barChart, divId);
     }
