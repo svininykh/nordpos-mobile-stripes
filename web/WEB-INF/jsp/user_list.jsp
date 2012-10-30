@@ -19,12 +19,13 @@
         <h2>
             <stripes:label name="label.users" />
         </h2>
-<%--
+
         <stripes:link href="Chart.action"
-                      class="ui-btn-right">
+                      class="ui-btn-right"
+                      target="_blank">
             <stripes:label name="label.chart.sales" />
         </stripes:link>
---%>
+
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
