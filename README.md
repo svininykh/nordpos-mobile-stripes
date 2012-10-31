@@ -3,6 +3,8 @@ Copyright (c) 2012 Nord Trading Ltd. Apache License, Version 2.0 ([ALv2](http://
 
 This is servlet for [create, read, update and delete](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) database tables of [Openbravo Java Client POS](http://wiki.openbravo.com/wiki/Projects:POS/FAQ/javapos). Also, this servlet compatible with many other Openbravo POS forks([NORD POS](http://www.nordpos.com/), [OpenPOS](http://forge.openbravo.com/projects/Openpos), [uniCenta oPOS](http://sourceforge.net/projects/unicentaopos/) and etc.)
 
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/2e98c4f8151adb2c32da940a6c12fb2a "githalytics.com")](http://githalytics.com/svininykh/nordpos-mobile-stripes)
+
 ## Introduction ##
 This project is an example of the ease develop and convenience of use mini servlets to access the data of big desktop application. I am propose for you to [make forks](https://github.com/svininykh/nordpos-mobile-stripes/fork) of this project, but not only for Openbravo POS developers, also for Stripes, Persist and jQuery Mobile frameworks beginers.
 
