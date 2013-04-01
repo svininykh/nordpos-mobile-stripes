@@ -25,7 +25,7 @@
         <ul data-role="listview" data-filter="true">
             <c:forEach items="${actionBean.productCategories}" var="productcategory" >
                 <li>
-                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCategoryListActionBean"
+                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCatalogActionBean"
                                   event="listProducts">
                         <stripes:param name="productCategoryId" value="${productcategory.id}" />
                         <c:out value="${productcategory.name}" />

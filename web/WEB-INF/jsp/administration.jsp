@@ -34,7 +34,7 @@
     <stripes:layout-component name="content">
         <ul data-role="listview">
             <li>
-                <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCategoryListActionBean"
+                <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCatalogActionBean"
                               event="list">
                     <stripes:label name="label.productcategories" />
                     <p>

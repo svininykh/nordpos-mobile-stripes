@@ -12,7 +12,7 @@
                        pageid="products">
 
     <stripes:layout-component name="header">
-        <stripes:link href="ProductCategoryList.action"
+        <stripes:link href="ProductCatalog.action"
                       class="ui-btn-left">
             <stripes:label name="label.productcategories" />
         </stripes:link>
@@ -25,7 +25,7 @@
         <ul data-role="listview" data-filter="true">
             <c:forEach items="${actionBean.products}" var="product" >
                 <li>
-                        <c:out value="${product.name}" />
+                    <c:out value="${product.name}" />
                 </li>
             </c:forEach>
         </ul>

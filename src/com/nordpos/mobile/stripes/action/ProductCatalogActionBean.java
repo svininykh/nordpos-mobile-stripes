@@ -28,7 +28,7 @@ import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
 
-public class ProductCategoryListActionBean extends BaseActionBean {
+public class ProductCatalogActionBean extends BaseActionBean {
 
     private static final String CATEGORIES_LIST = "/WEB-INF/jsp/productcategory_list.jsp";
     private static final String PRODUCTS_LIST = "/WEB-INF/jsp/product_list.jsp";    
