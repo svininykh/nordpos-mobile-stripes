@@ -34,6 +34,16 @@
     <stripes:layout-component name="content">
         <ul data-role="listview">
             <li>
+                <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCategoryListActionBean"
+                              event="list">
+                    <stripes:label name="label.productcategories" />
+                    <p>
+                        <stripes:label name="description.productcategories" />
+                    </p>
+                </stripes:link>
+                <span class="ui-li-count">${actionBean.countProductCategories}</span>
+            </li>     
+            <li>
                 <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"
                               event="list">
                     <stripes:label name="label.customers" />

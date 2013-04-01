@@ -21,6 +21,7 @@ package com.nordpos.mobile.stripes.action;
  */
 import com.nordpos.mobile.stripes.dao.CustomerPersist;
 import com.nordpos.mobile.stripes.dao.PeoplePersist;
+import com.nordpos.mobile.stripes.dao.ProductCategoryPersist;
 import com.nordpos.mobile.stripes.model.People;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
@@ -36,6 +37,7 @@ public class LoginActionBean extends BaseActionBean {
     private People loginUser = new People();
     private PeoplePersist peopleDao;
     private CustomerPersist customerDao;
+    private ProductCategoryPersist productCategoryDao;
     private String loginName;
     private String loginPassword;
 
@@ -66,13 +68,18 @@ public class LoginActionBean extends BaseActionBean {
         this.loginPassword = loginPassword;
     }
 
+    public Integer getCountUsers() {
+        peopleDao = new PeoplePersist(getServletContext());
+        return peopleDao.countUsers();
+    }
+
     public Integer getCountCustomers() {
         customerDao = new CustomerPersist(getServletContext());
         return customerDao.countCustomers();
     }
 
-    public Integer getCountUsers() {
-        peopleDao = new PeoplePersist(getServletContext());
-        return peopleDao.countUsers();
+    public Integer getCountProductCategories() {
+        productCategoryDao = new ProductCategoryPersist(getServletContext());
+        return productCategoryDao.countProductCategories();
     }
 }
