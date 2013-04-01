@@ -8,7 +8,7 @@
 
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 <stripes:layout-render name="/WEB-INF/jsp/common/layout_main.jsp"
-                       title="Products"
+                       title="${actionBean.productCategory.name} - Categories"
                        pageid="products">
 
     <stripes:layout-component name="header">
@@ -17,7 +17,7 @@
             <stripes:label name="label.productcategories" />
         </stripes:link>
         <h2>
-            <stripes:label name="label.products" />
+            ${actionBean.productCategory.name}
         </h2>
     </stripes:layout-component>
 
@@ -25,10 +25,14 @@
         <ul data-role="listview" data-filter="true">
             <c:forEach items="${actionBean.products}" var="product" >
                 <li>
-                    <c:out value="${product.name}" />
-                    <span class="ui-li-count">
-                        <c:out value="${product.priceSell.toString()}" />
-                    </span>                        
+                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductActionBean"
+                                  event="view">                        
+                        <stripes:param name="productId" value="${product.id}" />
+                        <c:out value="${product.name}" />
+                        <span class="ui-li-count">
+                            <c:out value="${product.priceSell.toString()}" />
+                        </span>                        
+                    </stripes:link>
                 </li>
             </c:forEach>
         </ul>

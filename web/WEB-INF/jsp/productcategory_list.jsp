@@ -12,12 +12,12 @@
                        pageid="products">
 
     <stripes:layout-component name="header">
-        <stripes:link href="ProductCatalog.action"
+        <stripes:link href="Login.action"
                       class="ui-btn-left">
-            <stripes:label name="label.productcategories" />
-        </stripes:link>
+            <stripes:label name="label.administration" />
+        </stripes:link>        
         <h2>
-            <stripes:label name="label.products" />
+            <stripes:label name="label.productcategories" />
         </h2>
     </stripes:layout-component>
 

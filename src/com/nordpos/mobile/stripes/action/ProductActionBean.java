@@ -23,49 +23,33 @@ import com.nordpos.mobile.stripes.dao.ProductCategoryPersist;
 import com.nordpos.mobile.stripes.dao.ProductPersist;
 import com.nordpos.mobile.stripes.model.Product;
 import com.nordpos.mobile.stripes.model.ProductCategory;
-import java.util.List;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
 
-public class ProductCatalogActionBean extends BaseActionBean {
+public class ProductActionBean extends BaseActionBean {
 
-    private static final String CATEGORIES_LIST = "/WEB-INF/jsp/productcategory_list.jsp";
-    private static final String PRODUCTS_LIST = "/WEB-INF/jsp/product_list.jsp";
-    private ProductCategoryPersist productCategoryDao;
+    private static final String VIEW = "/WEB-INF/jsp/product_view.jsp";
     private ProductPersist productDao;
-    private String productCategoryId;
+    private ProductCategoryPersist productCategoryDao;
+    private String productId;
 
     @DefaultHandler
-    public Resolution listCategories() {
-        return new ForwardResolution(CATEGORIES_LIST);
+    public Resolution view() {
+        return new ForwardResolution(VIEW);
     }
 
-    public Resolution listProducts() {
-        return new ForwardResolution(PRODUCTS_LIST);
+    public void setProductId(String id) {
+        productId = id;
     }
 
-    public void setProductCategoryId(String id) {
-        productCategoryId = id;
+    public Product getProduct() {
+        productDao = new ProductPersist(getServletContext());
+        return productDao.findProduct(productId);
     }
     
     public ProductCategory getProductCategory() {
         productCategoryDao = new ProductCategoryPersist(getServletContext());
-        return productCategoryDao.findProductCategory(productCategoryId);
-    }
-    
-    public List<ProductCategory> getProductCategories() {
-        productCategoryDao = new ProductCategoryPersist(getServletContext());
-        return productCategoryDao.findProductCategories();
-    }
-    
-    public List<Product> getProducts() {
-        productDao = new ProductPersist(getServletContext());
-        return productDao.findProductByCategory(productCategoryId);
+        return productCategoryDao.findProductCategory(getProduct().getCategory());
     }    
-
-//    public Integer getCountProductByCategory() {
-//        productDao = new ProductPersist(getServletContext());
-//        return productDao.countProductByCategory(productCategoryId);
-//    }
 }
