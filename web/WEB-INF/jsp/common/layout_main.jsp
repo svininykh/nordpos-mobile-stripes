@@ -39,7 +39,7 @@
 
                 <div data-theme="b" data-role="footer">
                     <h2>
-                        2012-2013
+                        2013
                     </h2>
                     <stripes:layout-component name="footer"/>
                 </div>

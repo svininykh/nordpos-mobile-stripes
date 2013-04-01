@@ -1,6 +1,6 @@
 <%-- 
-    Document   : productcategory_list
-    Created on : Apr 1, 2013, 10:38:41 AM
+    Document   : productcategory_view
+    Created on : Apr 1, 2013, 11:34:53 AM
     Author     : Andrey Svininykh (svininykh@gmail.com)
     Copyright  : Nord Trading Ltd.
     License    : Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
@@ -23,13 +23,9 @@
 
     <stripes:layout-component name="content">
         <ul data-role="listview" data-filter="true">
-            <c:forEach items="${actionBean.productCategories}" var="productcategory" >
+            <c:forEach items="${actionBean.products}" var="product" >
                 <li>
-                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCategoryListActionBean"
-                                  event="listProducts">
-                        <stripes:param name="productCategoryId" value="${productcategory.id}" />
-                        <c:out value="${productcategory.name}" />
-                    </stripes:link>
+                        <c:out value="${product.name}" />
                 </li>
             </c:forEach>
         </ul>
