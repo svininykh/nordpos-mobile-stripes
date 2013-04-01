@@ -31,25 +31,25 @@ import net.sourceforge.stripes.action.Resolution;
 public class ProductCatalogActionBean extends BaseActionBean {
 
     private static final String CATEGORIES_LIST = "/WEB-INF/jsp/productcategory_list.jsp";
-    private static final String PRODUCTS_LIST = "/WEB-INF/jsp/product_list.jsp";    
+    private static final String PRODUCTS_LIST = "/WEB-INF/jsp/product_list.jsp";
     private ProductCategoryPersist productCategoryDao;
     private ProductPersist productDao;
-    private String productCategoryId;    
+    private String productCategoryId;
 
     @DefaultHandler
     public Resolution listCategories() {
         return new ForwardResolution(CATEGORIES_LIST);
     }
-    
+
     public Resolution listProducts() {
         return new ForwardResolution(PRODUCTS_LIST);
-    }    
+    }
 
     public List<ProductCategory> getProductCategories() {
         productCategoryDao = new ProductCategoryPersist(getServletContext());
         return productCategoryDao.findProductCategories();
     }
-    
+
     public void setProductCategoryId(String id) {
         productCategoryId = id;
     }
@@ -57,5 +57,10 @@ public class ProductCatalogActionBean extends BaseActionBean {
     public List<Product> getProducts() {
         productDao = new ProductPersist(getServletContext());
         return productDao.findProductByCategory(productCategoryId);
-    }    
+    }
+
+    public Integer getCountProductByCategory() {
+        productDao = new ProductPersist(getServletContext());
+        return productDao.countProductByCategory(productCategoryId);
+    }
 }

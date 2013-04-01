@@ -12,7 +12,7 @@
                        pageid="products">
 
     <stripes:layout-component name="header">
-        <stripes:link href="ProductCategoryList.action"
+        <stripes:link href="ProductCatalog.action"
                       class="ui-btn-left">
             <stripes:label name="label.productcategories" />
         </stripes:link>
@@ -26,10 +26,13 @@
             <c:forEach items="${actionBean.productCategories}" var="productcategory" >
                 <li>
                     <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCatalogActionBean"
-                                  event="listProducts">
+                                  event="listProducts">                        
                         <stripes:param name="productCategoryId" value="${productcategory.id}" />
                         <c:out value="${productcategory.name}" />
                     </stripes:link>
+                    <%--
+                    <span class="ui-li-count">${actionBean.countProductByCategory}</span>                    
+                    --%>
                 </li>
             </c:forEach>
         </ul>

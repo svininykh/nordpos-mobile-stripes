@@ -26,6 +26,9 @@
             <c:forEach items="${actionBean.products}" var="product" >
                 <li>
                     <c:out value="${product.name}" />
+                    <span class="ui-li-count">
+                        <c:out value="${product.priceSell.toString()}" />
+                    </span>                        
                 </li>
             </c:forEach>
         </ul>
