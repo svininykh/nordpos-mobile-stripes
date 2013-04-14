@@ -3,6 +3,7 @@ Copyright (c) 2012 Nord Trading Ltd. Apache License, Version 2.0 ([ALv2](http://
 
 This is servlet for [create, read, update and delete](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) database tables of [Openbravo Java Client POS](http://wiki.openbravo.com/wiki/Projects:POS/FAQ/javapos). Also, this servlet compatible with many other Openbravo POS forks([NORD POS](http://www.nordpos.com/), [OpenPOS](http://forge.openbravo.com/projects/Openpos), [uniCenta oPOS](http://sourceforge.net/projects/unicentaopos/) and etc.)
 
+![NORD POS mobile - Login](http://farm9.staticflickr.com/8542/8648619244_70805ed240_m.jpg "Login") 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/2e98c4f8151adb2c32da940a6c12fb2a "githalytics.com")](http://githalytics.com/svininykh/nordpos-mobile-stripes)
 
 ## Introduction ##
@@ -10,6 +11,9 @@ This project is an example of the ease develop and convenience of use mini servl
 
 ## Java web application powered by [Stripes Framework](http://www.stripesframework.org) ##
 I am choose a Stripes, because it have simple structure of web-page and visual substitution methods of Java.
+
+![NORD POS mobile - Products list](http://farm9.staticflickr.com/8388/8648619286_5eab6f87ee_m.jpg "Products list")
+![NORD POS mobile - Product ticket](http://farm9.staticflickr.com/8519/8648619320_7a13c38868_m.jpg "Product ticket")
 
 ###Example JavaServer Pages###
 ```jsp
@@ -74,6 +78,8 @@ public class LoginActionBean extends BaseActionBean {
 
 ## Java data access object powered by [Persist ORM/DAO](http://github.com/rufiao/persist) ##
 I am choose Persist, because you can easy get data from model of database and need minimum settings for run SQL commands.
+
+![NORD POS mobile - Product view](http://farm9.staticflickr.com/8525/8648561310_a95651b7ba_m.jpg "Product view")
 
 ###Example Java Data Access Object###
 
@@ -150,3 +156,5 @@ public class People {
 
 ## Mobile user interface powered by [jQuery Mobile](http://www.jquerymobile.com) ##
 I am choose jQuery Mobile, because you need only one line of source code for change all elements of interface.
+
+![NORD POS mobile - Categories list](http://farm9.staticflickr.com/8254/8648529750_7b0a8d13e8_m.jpg "Categories list")
