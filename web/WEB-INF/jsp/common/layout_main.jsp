@@ -26,6 +26,15 @@
                 table caption { text-align:left;  }
                 table thead th { text-align:left; border-bottom-width:1px; border-top-width:1px; }
                 table th, td { text-align:left; padding:6px;}
+                .ui-li-thumb {
+                    left: 1px;
+                    top: 1px;
+                    bottom: 1px;
+                    height: 120px;
+                    width: 120px;
+                    position: absolute;
+
+                }
             </style>
         </head>
         <body>

@@ -30,8 +30,8 @@
                         <stripes:param name="productCategoryId" value="${productcategory.id}" />
 
                         <img src="${pageContext.servletContext.contextPath}/ProductCategory.action?eventName=display&categoryId=${productcategory.id}"
-                                 alt="${productcategory.name}"
-                                 />
+                             alt="${productcategory.name}"
+                             class="ui-li-thumb" />
 
                         <c:out value="${productcategory.name}" />
                         <span class="ui-li-count">
