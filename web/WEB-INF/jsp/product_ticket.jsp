@@ -8,7 +8,7 @@
 
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 <stripes:layout-render name="/WEB-INF/jsp/common/layout_main.jsp"
-                       title="Buy - ${actionBean.product.name}"
+                       title="Sell - ${actionBean.product.name}"
                        pageid="ticket">
 
     <stripes:layout-component name="header">
@@ -20,7 +20,7 @@
         </stripes:link>
 
         <h2>
-            <stripes:label name="label.buy" />
+            <stripes:label name="label.sell" />
         </h2>
 
         <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductActionBean"

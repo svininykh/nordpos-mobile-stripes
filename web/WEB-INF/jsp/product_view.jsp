@@ -27,7 +27,7 @@
                       event="ticket"
                       class="ui-btn-right">
             <stripes:param name="productRef" value="${actionBean.product.reference}" />
-            <stripes:label name="label.buy" />
+            <stripes:label name="label.sell" />
         </stripes:link>
 
     </stripes:layout-component>
