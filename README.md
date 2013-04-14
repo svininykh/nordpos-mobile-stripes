@@ -3,6 +3,7 @@ Copyright (c) 2012 Nord Trading Ltd. Apache License, Version 2.0 ([ALv2](http://
 
 This is servlet for [create, read, update and delete](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) database tables of [Openbravo Java Client POS](http://wiki.openbravo.com/wiki/Projects:POS/FAQ/javapos). Also, this servlet compatible with many other Openbravo POS forks([NORD POS](http://www.nordpos.com/), [OpenPOS](http://forge.openbravo.com/projects/Openpos), [uniCenta oPOS](http://sourceforge.net/projects/unicentaopos/) and etc.)
 
+![NORD POS mobile - Login](http://farm9.staticflickr.com/8542/8648619244_70805ed240_m.jpg "Login") 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/2e98c4f8151adb2c32da940a6c12fb2a "githalytics.com")](http://githalytics.com/svininykh/nordpos-mobile-stripes)
 
 ## Introduction ##
@@ -10,6 +11,9 @@ This project is an example of the ease develop and convenience of use mini servl
 
 ## Java web application powered by [Stripes Framework](http://www.stripesframework.org) ##
 I am choose a Stripes, because it have simple structure of web-page and visual substitution methods of Java.
+
+![NORD POS mobile - Products list](http://farm9.staticflickr.com/8388/8648619286_5eab6f87ee_m.jpg "Products list")
+![NORD POS mobile - Product ticket](http://www.flickr.com/photos/26354177@N07/8648619320/sizes/s/in/photostream/ "Product ticket")
 
 ###Example JavaServer Pages###
 ```jsp
