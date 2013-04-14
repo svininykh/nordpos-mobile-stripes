@@ -15,6 +15,7 @@
  */
 package com.nordpos.mobile.stripes.model;
 
+import java.util.Date;
 import net.sf.persist.annotations.NoColumn;
 import net.sf.persist.annotations.NoTable;
 
@@ -23,13 +24,17 @@ import net.sf.persist.annotations.NoTable;
  * @author Andrey Svininykh <svininykh@gmail.com>
  */
 @NoTable
-public class ProductCategory {
+public class Tax {
 
     private String id;
     private String name;
+    private Date validfrom;
+    private String category;
+    private String custcategory;
     private String parentid;
-    private byte[] image;
-    private Integer countProducts;
+    private Double rate;
+    private Boolean ratecascade;
+    private Integer rateorder;
 
     public String getId() {
         return id;
@@ -47,6 +52,30 @@ public class ProductCategory {
         this.name = name;
     }
 
+    public Date getValidFrom() {
+        return validfrom;
+    }
+
+    public void setValidFrom(Date validfrom) {
+        this.validfrom = validfrom;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getCustCategory() {
+        return custcategory;
+    }
+
+    public void setCustCategory(String custcategory) {
+        this.custcategory = custcategory;
+    }
+
     public String getParentId() {
         return parentid;
     }
@@ -55,20 +84,32 @@ public class ProductCategory {
         this.parentid = parentid;
     }
 
-    public byte[] getImage() {
-        return image;
+    public Double getRate() {
+        return rate;
     }
 
-    public void setImage(byte[] image) {
-        this.image = image;
+    public void setRate(Double rate) {
+        this.rate = rate;
+    }
+
+    public Boolean getRateCascade() {
+        return ratecascade;
+    }
+
+    public void setRateCascade(Boolean ratecascade) {
+        this.ratecascade = ratecascade;
+    }
+
+    public Integer getRateOrder() {
+        return rateorder;
     }
 
     @NoColumn
-    public Integer getCountProducts() {
-        return countProducts;
+    public Integer getApplicationRateOrder() {
+        return rateorder == null ? Integer.MAX_VALUE : rateorder.intValue();
     }
 
-    public void setCountProducts(Integer countProducts) {
-        this.countProducts = countProducts;
+    public void setRateOrder(Integer rateorder) {
+        this.rateorder = rateorder;
     }
 }

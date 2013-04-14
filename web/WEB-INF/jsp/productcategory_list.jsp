@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : productcategory_list
     Created on : Apr 1, 2013, 10:38:41 AM
     Author     : Andrey Svininykh (svininykh@gmail.com)
@@ -15,7 +15,7 @@
         <stripes:link href="Login.action"
                       class="ui-btn-left">
             <stripes:label name="label.administration" />
-        </stripes:link>        
+        </stripes:link>
         <h2>
             <stripes:label name="label.productcategories" />
         </h2>
@@ -25,14 +25,19 @@
         <ul data-role="listview" data-filter="true">
             <c:forEach items="${actionBean.productCategories}" var="productcategory" >
                 <li>
-                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCatalogActionBean"
-                                  event="listProducts">                        
+                    <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductActionBean"
+                                  event="list">
                         <stripes:param name="productCategoryId" value="${productcategory.id}" />
+
+                        <img src="${pageContext.servletContext.contextPath}/ProductCategory.action?eventName=display&categoryId=${productcategory.id}"
+                                 alt="${productcategory.name}"
+                                 />
+
                         <c:out value="${productcategory.name}" />
+                        <span class="ui-li-count">
+                            <c:out value="${productcategory.countProducts}" />
+                        </span>
                     </stripes:link>
-                    <%--
-                    <span class="ui-li-count">${actionBean.countProductByCategory}</span>                    
-                    --%>
                 </li>
             </c:forEach>
         </ul>

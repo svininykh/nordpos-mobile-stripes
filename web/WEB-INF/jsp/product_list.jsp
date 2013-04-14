@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : productcategory_view
     Created on : Apr 1, 2013, 11:34:53 AM
     Author     : Andrey Svininykh (svininykh@gmail.com)
@@ -12,12 +12,13 @@
                        pageid="products">
 
     <stripes:layout-component name="header">
-        <stripes:link href="ProductCatalog.action"
+        <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCategoryActionBean"
+                      event="list"
                       class="ui-btn-left">
             <stripes:label name="label.productcategories" />
         </stripes:link>
         <h2>
-            ${actionBean.productCategory.name}
+            <c:out value="${actionBean.productCategory.name}" />
         </h2>
     </stripes:layout-component>
 
@@ -26,12 +27,13 @@
             <c:forEach items="${actionBean.products}" var="product" >
                 <li>
                     <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductActionBean"
-                                  event="view">                        
-                        <stripes:param name="productId" value="${product.id}" />
+                                  event="view">
+                        <stripes:param name="productRef" value="${product.reference}" />
                         <c:out value="${product.name}" />
-                        <span class="ui-li-count">
-                            <c:out value="${product.priceSell.toString()}" />
-                        </span>                        
+                        <span class="ui-li-aside">
+                            <stripes:format value="${product.priceSellTax}"
+                                            formatType="currency" />
+                        </span>
                     </stripes:link>
                 </li>
             </c:forEach>

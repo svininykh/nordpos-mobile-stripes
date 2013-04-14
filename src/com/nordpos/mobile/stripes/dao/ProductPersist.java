@@ -36,10 +36,16 @@ public class ProductPersist extends BaseJDBCPersist {
         }
     }
 
-    public Product findProduct(String productId) {
+    public Product findProductById(String productId) {
         return persist.read(Product.class,
                 "SELECT * FROM PRODUCTS WHERE ID = ?",
                 productId);
+    }
+
+    public Product findProductByRef(String productRef) {
+        return persist.read(Product.class,
+                "SELECT * FROM PRODUCTS WHERE REFERENCE = ?",
+                productRef);
     }
 
     public List<Product> findProductByCategory(String categoryId) {

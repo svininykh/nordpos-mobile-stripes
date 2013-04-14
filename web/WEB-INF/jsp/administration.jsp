@@ -34,14 +34,14 @@
     <stripes:layout-component name="content">
         <ul data-role="listview">
             <li>
-                <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCatalogActionBean"
+                <stripes:link beanclass="com.nordpos.mobile.stripes.action.ProductCategoryActionBean"
                               event="list">
                     <stripes:label name="label.productcategories" />
                     <p>
                         <stripes:label name="description.productcategories" />
                     </p>
+                    <span class="ui-li-count">${actionBean.countProductCategories}</span>
                 </stripes:link>
-                <span class="ui-li-count">${actionBean.countProductCategories}</span>
             </li>     
             <li>
                 <stripes:link beanclass="com.nordpos.mobile.stripes.action.CustomerListActionBean"

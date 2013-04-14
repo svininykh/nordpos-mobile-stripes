@@ -15,7 +15,6 @@
  */
 package com.nordpos.mobile.stripes.model;
 
-import net.sf.persist.annotations.NoColumn;
 import net.sf.persist.annotations.NoTable;
 
 /**
@@ -23,13 +22,10 @@ import net.sf.persist.annotations.NoTable;
  * @author Andrey Svininykh <svininykh@gmail.com>
  */
 @NoTable
-public class ProductCategory {
+public class TaxCategory {
 
     private String id;
     private String name;
-    private String parentid;
-    private byte[] image;
-    private Integer countProducts;
 
     public String getId() {
         return id;
@@ -45,30 +41,5 @@ public class ProductCategory {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getParentId() {
-        return parentid;
-    }
-
-    public void setParentId(String parentid) {
-        this.parentid = parentid;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
-    @NoColumn
-    public Integer getCountProducts() {
-        return countProducts;
-    }
-
-    public void setCountProducts(Integer countProducts) {
-        this.countProducts = countProducts;
     }
 }

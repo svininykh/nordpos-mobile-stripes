@@ -25,9 +25,10 @@
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
+        <img src="<c:url value='/image/logo.png' />" alt="Company logo"> 
         <stripes:form beanclass="com.nordpos.mobile.stripes.action.LoginActionBean" focus="">
             <table summary="Enter user name and password.">
-                <tbody>
+                <tbody>               
                     <tr>
                         <th scope="row"><stripes:label name="label.login.name" /></th>
                         <td><stripes:text name="loginName"/></td>

@@ -15,7 +15,7 @@
  */
 package com.nordpos.mobile.stripes.model;
 
-import net.sf.persist.annotations.Column;
+import net.sf.persist.annotations.NoColumn;
 import net.sf.persist.annotations.NoTable;
 
 /**
@@ -32,7 +32,7 @@ public class Product {
     private String name;
     private Double pricebuy;
     private Double pricesell;
-    private String category;    
+    private String category;
     private String taxcat;
     private String attributeset_id;
     private Double stockcost;
@@ -41,6 +41,7 @@ public class Product {
     private Boolean iscom;
     private Boolean isscale;
     private byte[] attributes;
+    private Double taxrate;
 
     public String getId() {
         return id;
@@ -65,14 +66,14 @@ public class Product {
     public void setCode(String code) {
         this.code = code;
     }
-    
+
     public String getCodeType() {
         return codetype;
     }
 
     public void setCodeType(String codetype) {
         this.codetype = codetype;
-    }    
+    }
 
     public String getName() {
         return name;
@@ -98,6 +99,25 @@ public class Product {
         this.pricesell = pricesell;
     }
 
+    @NoColumn
+    public Double getPriceSellTax() {
+        return getPriceSell() + getTaxAmount();
+    }
+
+    @NoColumn
+    public Double getTaxRate() {
+        return taxrate;
+    }
+
+    @NoColumn
+    public Double getTaxAmount() {
+        return getPriceSell() * getTaxRate();
+    }
+
+    public void setTaxRate(Double taxrate) {
+        this.taxrate = taxrate;
+    }
+
     public String getCategory() {
         return category;
     }
@@ -113,30 +133,30 @@ public class Product {
     public void setTaxCat(String taxcat) {
         this.taxcat = taxcat;
     }
-    
+
     public String getAttributeSet_Id() {
         return attributeset_id;
     }
 
     public void setAttributeSet_Id(String attributeset_id) {
         this.attributeset_id = attributeset_id;
-    }    
-    
+    }
+
     public Double getStockCost() {
         return stockcost;
     }
 
     public void setStockCost(Double stockcost) {
         this.stockcost = stockcost;
-    }    
-    
+    }
+
     public Double getStockVolume() {
         return stockvolume;
     }
 
     public void setStockVolume(Double stockvolume) {
         this.stockvolume = stockvolume;
-    }      
+    }
 
     public byte[] getImage() {
         return image;
@@ -145,28 +165,28 @@ public class Product {
     public void setImage(byte[] image) {
         this.image = image;
     }
-    
+
     public Boolean getIsCom() {
         return iscom;
     }
 
     public void setIsCom(Boolean iscom) {
         this.iscom = iscom;
-    } 
-    
+    }
+
     public Boolean getIsScale() {
         return isscale;
     }
 
     public void setIsScale(Boolean isscale) {
         this.isscale = isscale;
-    } 
-    
+    }
+
     public byte[] getAttributes() {
         return attributes;
     }
 
     public void setAttributes(byte[] attributes) {
         this.attributes = attributes;
-    }    
+    }
 }
