@@ -75,6 +75,8 @@ public class LoginActionBean extends BaseActionBean {
 ## Java data access object powered by [Persist ORM/DAO](http://github.com/rufiao/persist) ##
 I am choose Persist, because you can easy get data from model of database and need minimum settings for run SQL commands.
 
+![NORD POS mobile - Product view](http://farm9.staticflickr.com/8525/8648561310_a95651b7ba_m.jpg "Product view")
+
 ###Example Java Data Access Object###
 
 ```java
@@ -150,4 +152,5 @@ public class People {
 
 ## Mobile user interface powered by [jQuery Mobile](http://www.jquerymobile.com) ##
 I am choose jQuery Mobile, because you need only one line of source code for change all elements of interface.
+
 ![NORD POS mobile - Categories list](http://farm9.staticflickr.com/8254/8648529750_7b0a8d13e8_m.jpg "Categories list")
