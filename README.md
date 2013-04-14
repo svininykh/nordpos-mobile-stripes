@@ -13,7 +13,7 @@ This project is an example of the ease develop and convenience of use mini servl
 I am choose a Stripes, because it have simple structure of web-page and visual substitution methods of Java.
 
 ![NORD POS mobile - Products list](http://farm9.staticflickr.com/8388/8648619286_5eab6f87ee_m.jpg "Products list")
-![NORD POS mobile - Product ticket](http://www.flickr.com/photos/26354177@N07/8648619320/sizes/s/in/photostream/ "Product ticket")
+![NORD POS mobile - Product ticket](http://farm9.staticflickr.com/8519/8648619320_7a13c38868_m.jpg "Product ticket")
 
 ###Example JavaServer Pages###
 ```jsp
