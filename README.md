@@ -150,3 +150,4 @@ public class People {
 
 ## Mobile user interface powered by [jQuery Mobile](http://www.jquerymobile.com) ##
 I am choose jQuery Mobile, because you need only one line of source code for change all elements of interface.
+![NORD POS mobile - Categories list](http://farm9.staticflickr.com/8254/8648529750_7b0a8d13e8_m.jpg "Categories list")
