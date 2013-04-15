@@ -1,7 +1,7 @@
 # [NORD POS](http://www.nordpos.com) mobile servlet #
 Copyright (c) 2012 Nord Trading Ltd. Apache License, Version 2.0 ([ALv2](http://www.apache.org/licenses/LICENSE-2.0.html))
 
-This is servlet for [create, read, update and delete](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) database tables of [Openbravo Java Client POS](http://wiki.openbravo.com/wiki/Projects:POS/FAQ/javapos). Also, this servlet compatible with many other Openbravo POS forks([NORD POS](http://www.nordpos.com/), [OpenPOS](http://forge.openbravo.com/projects/Openpos), [uniCenta oPOS](http://sourceforge.net/projects/unicentaopos/) and etc.)
+This is servlet for [create, read, update and delete](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) database tables of [Openbravo Java Client POS](http://wiki.openbravo.com/wiki/Projects:POS/FAQ/javapos). Also, this servlet is compatible with many other Openbravo POS forks([NORD POS](http://www.nordpos.com/), [OpenPOS](http://forge.openbravo.com/projects/Openpos), [uniCenta oPOS](http://sourceforge.net/projects/unicentaopos/) and etc.)
 
 ![NORD POS mobile - Login](http://farm9.staticflickr.com/8542/8648619244_70805ed240_m.jpg "Login") 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/2e98c4f8151adb2c32da940a6c12fb2a "githalytics.com")](http://githalytics.com/svininykh/nordpos-mobile-stripes)
